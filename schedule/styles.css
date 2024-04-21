@@ -1,0 +1,33 @@
+/* Add your custom CSS styles here */
+/* You can style the schedule layout as desired */
+/* This is just a basic example */
+
+.section-heading {
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  .schedule-div {
+    margin: 0 auto;
+    max-width: 600px; /* Adjust as needed */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  td p {
+    margin: 0;
+  }
+  

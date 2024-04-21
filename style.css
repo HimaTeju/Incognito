@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 5%;
+    position: fixed; /* Changed from absolute to fixed */
+    width: 100%;
+    z-index: 100;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+  
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+  
+header nav li {
+    padding: 0 20px;
+}
+  
+header nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    background-color: #111;
+}
+
+.home {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to top, #6c6e71 30%, #393a3b);
+    position: relative;
+    overflow: hidden;
+}
+
+.home img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    pointer-events: none;
+}
+
+.home .title {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 100px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.events {
+    padding: 50px;
+    background: #181819;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.card {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #434445;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 250px;
+}
+
+.card-img {
+    height: 300px; /* Adjust as needed */
+    background-image: url('assets/bg.png'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+}
+
+.card-text {
+    padding: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #373d43; /* Blue color, you can change it */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.scroll-progress-container {
+    position: fixed; /* Position fixed to keep it visible */
+    top: 0; /* Align the progress bar to the top of the page */
+    left: 0; /* Align the progress bar to the left of the page */
+    width: 4px; /* Width of the progress bar */
+    height: 100vh; /* Height of the progress bar */
+    background-color: transparent; /* Set the background color to transparent */
+    z-index: 9999; /* Set a high z-index to ensure it's on top of other elements */
+}
+
+.scroll-progress {
+    position: absolute; /* Position the progress bar absolutely within the container */
+    top: 0; /* Align the progress bar to the top of the container */
+    left: 50%; /* Center the progress bar horizontally */
+    transform: translateX(-50%); /* Center the progress bar horizontally */
+    height: 0; /* Set the initial height to 0 */
+    width: 100%; /* Set the initial width to 100% */
+    background-color: blue; /* Change the color to something visible */
+    transition: height 0.3s ease; /* Smooth transition effect */
+}
+
+.card {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #434445;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 250px;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 100%;
+    background-color: blue;
+    z-index: -1;
+}
+
+.card:last-child::before {
+    display: none;
+}

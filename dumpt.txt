@@ -1,0 +1,156 @@
+const title = document.querySelector('.title')
+const logo = document.querySelector('.logo')
+
+document.addEventListener('scroll', function() {
+    let value = window.scrollY
+    title.style.marginTop = value * 1.1+ 'px'
+    logo.style.marginBottom = -value * 1.1 + 'px'
+    logo.style.marginBottom = -value * 1.2 + 'px'
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if the scroll-progress element exists in the document
+    const scrollProgress = document.getElementById('scroll-progress');
+    if (!scrollProgress) {
+        console.error('Error: Scroll progress element not found.');
+        return;
+    }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', function() {
+        // Calculate scroll progress as a percentage
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollTop = window.scrollY;
+        const progress = (scrollTop / scrollHeight) * 100;
+
+        // Update the height of the progress indicator based on scroll progress
+        scrollProgress.style.height = progress + '%';
+    });
+});
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 5%;
+    position: fixed; /* Changed from absolute to fixed */
+    width: 100%;
+    z-index: 100;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+  
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+  
+header nav li {
+    padding: 0 20px;
+}
+  
+header nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    background-color: #111;
+}
+
+.home {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to top, #6c6e71 30%, #393a3b);
+    position: relative;
+    overflow: hidden;
+}
+
+.home img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    pointer-events: none;
+}
+
+.home .title {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 100px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.events {
+    padding: 50px;
+    background: #181819;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.card {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #434445;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.card-img {
+    height: 300px; /* Adjust as needed */
+    background-image: url('assets/bg.png'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+}
+
+.card-text {
+    padding: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #373d43; /* Blue color, you can change it */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full height of the viewport */
+    width: 4px; /* Width of the progress indicator */
+    background-color: #24dc33; /* Color of the progress indicator */
+    z-index: 9999; /* Ensure it's above other content */
+    transition: height 0.9s ease; /* Smooth transition effect */
+}
+  
