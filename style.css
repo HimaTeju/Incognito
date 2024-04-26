@@ -158,3 +158,23 @@ header nav a:hover {
 .card:last-child::before {
     display: none;
 }
+
+footer{
+    background-color: #181819;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer_content{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.footer_content a{
+    color: white;
+}
+
+.footer_content a:hover{
+    color: aqua;
+}
