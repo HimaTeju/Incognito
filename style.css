@@ -81,82 +81,139 @@ header nav a:hover {
     overflow: hidden;
     z-index: 100;
 }
-
-.card {
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+.card{
     position: relative;
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background-color: #434445;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 250px;
+    width: 350px;
+    height: 350px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    border-radius: 20px;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    transition-delay: .5s;
 }
 
-.card-img {
-    height: 300px; /* Adjust as needed */
-    background-image: url('assets/bg.png'); /* Replace with your image */
-    background-size: cover;
-    background-position: center;
+.card:hover{
+    width: 600px;
+    transition-delay: .5s;
 }
 
-.card-text {
-    padding: 20px;
+.card .circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #373d43; /* Blue color, you can change it */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.scroll-progress-container {
-    position: fixed; /* Position fixed to keep it visible */
-    top: 0; /* Align the progress bar to the top of the page */
-    left: 0; /* Align the progress bar to the left of the page */
-    width: 4px; /* Width of the progress bar */
-    height: 100vh; /* Height of the progress bar */
-    background-color: transparent; /* Set the background color to transparent */
-    z-index: 9999; /* Set a high z-index to ensure it's on top of other elements */
-}
-
-.scroll-progress {
-    position: absolute; /* Position the progress bar absolutely within the container */
-    top: 0; /* Align the progress bar to the top of the container */
-    left: 50%; /* Center the progress bar horizontally */
-    transform: translateX(-50%); /* Center the progress bar horizontally */
-    height: 0; /* Set the initial height to 0 */
-    width: 100%; /* Set the initial width to 100% */
-    background-color: blue; /* Change the color to something visible */
-    transition: height 0.3s ease; /* Smooth transition effect */
-}
-
-.card {
-    position: relative;
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background-color: #434445;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 250px;
-}
-
-.card::before {
+.card .circle::before{
     content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    background: #787575;
+    border: 8px solid var(--clr);
+    filter: drop-shadow(0 0 10px var(--clr))
+    drop_shadow(0 0 60px var(--clr));
+    transition: .5s, background .5s;
+    transition-delay: .75s, 1s;
+}
+
+.card:hover .circle::before{
+    transition-delay: .5s;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background: var(--clr);
+}
+
+.card .circle .logo{
+    position: relative;
+    width: 250px;
+    transition: .5s;
+    transition-delay: .5s;
+}
+
+.card:hover .circle .logo{
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.card .image{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 4px;
-    height: 100%;
-    background-color: blue;
-    z-index: -1;
+    transform: translate(-50%, -50%) scale(0) rotate(315deg);
+    height: 300px;
+    transition: .5s ease-in-out;
 }
 
-.card:last-child::before {
-    display: none;
+.card:hover .image{
+    transition-delay: .75s;
+    top: 50%;
+    left: 75%;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    scale: (1) rotate(15deg);
+}
+
+.card .content{
+    position: absolute;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: .5s;
+    visibility: hidden;
+}
+
+.card:hover .content{
+    transition-delay: .75s;
+    opacity: 1;
+    visibility: visible;
+    left: 2.5px;
+}
+
+.card .content h2{
+    color: #111;
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    line-height: 1cm;
+}
+
+.card .content p{
+    color: #111;
+}
+
+.card .content a{
+    position: relative;
+    color: #111;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.info {
+    line-height: 1.5;
 }
 
 footer{
@@ -177,4 +234,28 @@ footer{
 
 .footer_content a:hover{
     color: aqua;
+}
+
+@media (max-width: 768px){
+    header nav ul{
+        display: none;
+    }
+    header nav ul.active{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #111;
+    }
+    header nav ul.active li{
+        padding: 10px 0;
+    }
+    header nav ul.active li a{
+        padding: 10px 20px;
+    }
+    .home .title{
+        font-size: 60px;
+    }
 }

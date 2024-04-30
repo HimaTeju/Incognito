@@ -154,3 +154,197 @@ header nav a:hover {
     transition: height 0.9s ease; /* Smooth transition effect */
 }
   
+<section id="events" class="events">
+      <div class="card-container">
+        <div class="card">
+        <div class="circle" style="--clr: #fff">
+            <img class="logo" src="./assets/eafc.png" alt="" />
+          </div>
+          <div class="content">
+            <h2>fifa</h2>
+            <div class="info">
+              <br>
+            <p>No of Participant: 1</p>
+            <p>Registration Fees: 150 Rs</p>
+            </div>
+            <br>
+            <p>
+              Student Co-ordinators:
+              <h5>Himateju V 6366145580</h5>
+              <h5>Harshith S 0000000000</h5>
+            </p>
+    
+            <a href="#">Read More</a>
+          </div>
+          <img src="./assets/fifa.png" class="image" alt="" />
+        </div>
+    
+        <div class="card">
+          <div class="circle" style="--clr: #fff">
+              <img class="logo" src="./assets/eafc.png" alt="" />
+            </div>
+            <div class="content">
+              <h2>fifa</h2>
+              <div class="info">
+                <br>
+              <p>No of Participant: 1</p>
+              <p>Registration Fees: 150 Rs</p>
+              </div>
+              <br>
+              <p>
+                Student Co-ordinators:
+                <h5>Himateju V 6366145580</h5>
+                <h5>Harshith S 0000000000</h5>
+              </p>
+      
+              <a href="#">Read More</a>
+            </div>
+            <img src="./assets/fifa.png" class="image" alt="" />
+          </div>
+        </div>
+    </section>
+
+    .events {
+    padding: 50px;
+    background: #181819;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Ensure the events section is behind other content */
+    margin-top: 100vh; /* Adjust margin-top to create space below the home section */
+}  
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.card{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    border-radius: 20px;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    transition-delay: .5s;
+}
+
+.card:hover{
+    width: 600px;
+    transition-delay: .5s;
+}
+
+.card .circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .circle::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    background: #787575;
+    border: 8px solid var(--clr);
+    filter: drop-shadow(0 0 10px var(--clr))
+    drop_shadow(0 0 60px var(--clr));
+    transition: .5s, background .5s;
+    transition-delay: .75s, 1s;
+}
+
+.card:hover .circle::before{
+    transition-delay: .5s;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background: var(--clr);
+}
+
+.card .circle .logo{
+    position: relative;
+    width: 250px;
+    transition: .5s;
+    transition-delay: .5s;
+}
+
+.card:hover .circle .logo{
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.card .image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(315deg);
+    height: 300px;
+    transition: .5s ease-in-out;
+}
+
+.card:hover .image{
+    transition-delay: .75s;
+    top: 50%;
+    left: 75%;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    scale: (1) rotate(15deg);
+}
+
+.card .content{
+    position: absolute;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: .5s;
+    visibility: hidden;
+}
+
+.card:hover .content{
+    transition-delay: .75s;
+    opacity: 1;
+    visibility: visible;
+    left: 2.5px;
+}
+
+.card .content h2{
+    color: #111;
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    line-height: 1cm;
+}
+
+.card .content p{
+    color: #111;
+}
+
+.card .content a{
+    position: relative;
+    color: #111;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.info {
+    line-height: 1.5;
+}
