@@ -14,16 +14,23 @@ body{
     min-height: 100vh;
     background-color: #151515;
 }
-
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
 .card{
     position: relative;
     width: 350px;
     height: 350px;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     transition: .5s;
     border-radius: 20px;
+    margin-bottom: 10%;
+    margin-top: 10%;
     transition-delay: .5s;
 }
 
@@ -136,4 +143,8 @@ body{
     text-decoration: none;
     font-weight: 600;
     margin-top: 10px;
+}
+
+.info {
+    line-height: 1.5;
 }
