@@ -1,5 +1,5 @@
 const title = document.querySelector('.title');
-const logo = document.querySelector('.logo');
+const logo = document.querySelector('.logo1');
 
 document.addEventListener('scroll', function() {
     let value = window.scrollY;
