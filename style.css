@@ -9,7 +9,7 @@
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
     height: 100px;
     padding: 0 5%;
@@ -21,31 +21,45 @@ header {
 header nav {
     display: flex;
     gap: 30px;
+    position: relative; /* Add relative positioning to the parent nav */
 }
-  
+
 header nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
-  
+
 header nav li {
     padding: 0 20px;
+    position: relative; /* Add relative positioning to the list items */
 }
-  
+
 header nav a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    position: relative; /* Add relative positioning to the anchor elements */
 }
 
-header nav a:hover {
-    background-color: #111;
+header nav a:after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 3px;
+    width: 0;
+    left: 0; /* Start the line from the left */
+    bottom: -10px;
+    transition: 0.5s;
 }
 
+header nav a:hover:after {
+    width: 100%;
+    right: 0; /* Expand towards the right */
+}
 .home {
     display: flex;
     height: 100vh;
@@ -69,7 +83,7 @@ header nav a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 100px;
+    font-size: 150px;
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 .about {
@@ -276,4 +290,66 @@ footer{
     .home .title{
         font-size: 60px;
     }
+
+    .events {
+        padding: 10px; /* Adjusted padding for smaller screens */
+        background: #181819;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        z-index: 100;
+    }
+    
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .card {
+        position: relative;
+        width: 90%; /* Adjusted width for smaller screens */
+        max-width: 100%; /* Added max-width to ensure proper scaling */
+        margin-bottom: 20px; /* Adjusted margin for space between cards */
+        border-radius: 20px;
+        overflow: hidden; /* Ensure content does not overflow */
+    }
+    
+    .card:hover {
+        transform: scale(1.05); /* Add a slight scale effect on hover */
+    }
+    
+    .card .circle::before {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%; /* Adjusted border-radius for smaller screens */
+    }
+    
+    .card .image {
+        width: 80%; /* Ensure image takes full width */
+        max-height: 200px; /* Adjusted max-height for smaller screens */
+        height: auto; /* Allow image height to adjust based on content */
+        transition: .5s ease-in-out;
+    }
+    
+    .card .content {
+        padding: 20px; /* Adjusted padding for smaller screens */
+    }
+    
+    .card .content h2 {
+        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+        line-height: 1.2; /* Adjusted line height for smaller screens */
+    }
+    
+    .card .content p {
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+    }
+    
+    .card .content a {
+        padding: 8px 16px; /* Adjusted padding for smaller screens */
+        font-size: 0.8rem; /* Adjusted font size for smaller screens */
+        border-radius: 8px; /* Adjusted border-radius for smaller screens */
+    }
+    
+    
 }
