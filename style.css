@@ -91,9 +91,22 @@ header nav a:hover:after {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 150px;
+    font-size: 120px;
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
 }
+
+.home .title1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(62, 62, 206);
+    font-size: 40px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
 .about {
     padding: 50px;
     padding-top: 70px; /* Increase padding top for more space */
@@ -166,7 +179,7 @@ header nav a:hover:after {
     height: 350px;
     width: 350px;
     border-radius: 50%;
-    background: #787575;
+    background: transparent;
     border: 8px solid var(--clr);
     filter: drop-shadow(0 0 10px var(--clr))
     drop_shadow(0 0 60px var(--clr));
