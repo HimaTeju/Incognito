@@ -82,7 +82,7 @@ header nav a:hover:after {
         width: 100%;
         position:absolute;
         align-content:normal;
-        z-index: 999;  
+        z-index: 1;  
 }
 
 .home .title {
@@ -91,27 +91,46 @@ header nav a:hover:after {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 150px;
+    font-size: 120px;
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2;
 }
+
+.home .title1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(31,107,238,255);
+    font-size: 40px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    z-index: 0;
+}
+
 .about {
     padding: 50px;
-    padding-top: 70px; /* Increase padding top for more space */
-    background: #393a3b;
+    padding-top: 10px; /* Increase padding top for more space */
+    background-color:#071223;
     color: #fff; /* Use a slightly lighter color for better contrast */
     position: relative;
     overflow: hidden;
-    z-index: 100;
     font-size: 16px;
     line-height: 1.6;
+    z-index: 100;
 }
 
 .about h2 {
-    margin-top: 20px; /* Add space above each heading */
+    margin-top: 10px; /* Add space above each heading */
 }
 
 .about p {
-    margin-bottom: 20px; /* Add space below each paragraph */
+    text-align: center;
+    word-spacing: 1mm;
+    letter-spacing: .6mm;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 2%;
+
 }
 .events {
     padding: 50px;
@@ -166,7 +185,7 @@ header nav a:hover:after {
     height: 350px;
     width: 350px;
     border-radius: 50%;
-    background: #787575;
+    background: transparent;
     border: 8px solid var(--clr);
     filter: drop-shadow(0 0 10px var(--clr))
     drop_shadow(0 0 60px var(--clr));
@@ -303,6 +322,9 @@ footer{
     }
     .home .title{
         font-size: 60px;
+    }
+    .home .title1{
+        font-size: 10px;
     }
 
     .events {
