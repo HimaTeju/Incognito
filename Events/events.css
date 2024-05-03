@@ -63,7 +63,7 @@ header nav a:hover:after {
 }
 .home {
     display: flex;
-    height: 125vh;
+    height: 120vh;
     background: linear-gradient(to top, #6c6e71 30%, #393a3b);
     position: relative;
     overflow: hidden;
@@ -107,184 +107,40 @@ header nav a:hover:after {
     z-index: 0;
 }
 
-.about {
+.rules-regulations {
     padding: 50px;
     padding-top: 10px; /* Increase padding top for more space */
     background-color:#071223;
     color: #fff; /* Use a slightly lighter color for better contrast */
     position: relative;
     overflow: hidden;
-    font-size: 16px;
     line-height: 1.6;
+    font-size: 18px;
     z-index: 100;
 }
 
-.about h2 {
+.rules-regulations h2 {
     margin-top: 10px; /* Add space above each heading */
 }
 
-.about p {
-    text-align: center;
-    word-spacing: 1mm;
-    letter-spacing: .6mm;
-    margin-right: 10%;
+.rules-regulations ul {
+    display: inline-block;
     margin-left: 10%;
-    margin-top: 2%;
-
-}
-.events {
-    padding: 50px;
-    background: #181819;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    z-index: 100;
+    letter-spacing: .8px;
 }
 
-.event_name {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    margin-top: 30px;
+.container section{
+    margin-top: 40px;
 }
-
-
-.cards-container {
-    width: fit-content;
-    margin: 0 auto; /* Centering horizontally */
-    text-align: center;
-  }
-  
-.card{
-    position: relative;
-    width: 350px;
-    height: 350px;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    transition: .5s;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    transition-delay: .5s;
-}
-
-.card:hover{
-    width: 600px;
-    transition-delay: .5s;
-}
-
-.card .circle{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
+.contact-info {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card .circle::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 350px;
-    width: 350px;
-    border: 8px solid var(--clr);
-    filter: drop-shadow(0 0 10px var(--clr))
-    drop_shadow(0 0 60px var(--clr));
-    transition: .5s, background .5s;
-    transition-delay: .75s, 1s;
-}
-
-.card:hover .circle::before{
-    transition-delay: .5s;
-    height: 100%;
-    width: 100%;
-    border-radius: 20px;
-    background: var(--clr);
-}
-
-.card .circle .name{
-    position: relative;
-    transition: .5s;
-    transition-delay: .5s;
-    font-size: 300%;
-    max-width: 300px;
-    text-align: center;
-}
-
-.card:hover .circle .name{
-    transform: scale(0);
-    transition-delay: 0s;
-}
-
-.card .image{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0) rotate(315deg);
-    height: 300px;
-    transition: .5s ease-in-out;
-}
-
-.card:hover .image{
-    transition-delay: .75s;
-    top: 50%;
-    left: 75%;
-    height: 200px;
-    transform: translate(-50%, -50%);
-    scale: (1) rotate(15deg);
-}
-
-.card .content{
-    position: absolute;
-    width: 50%;
-    left: 20%;
-    padding: 20px 20px 20px 40px;
-    opacity: 0;
-    transition: .5s;
-    visibility: hidden;
-}
-
-.card:hover .content{
-    transition-delay: .75s;
-    opacity: 1;
-    visibility: visible;
-    left: 2.5px;
-}
-
-.card .content h2{
-    color: #111;
-    text-transform: capitalize;
-    font-size: 2.5rem;
-    line-height: 1cm;
-}
-
-.card .content p{
-    color: #111;
-}
-
-.card .content a{
-    position: relative;
-    color: #111;
-    background: #fff;
-    padding: 10px 20px;
-    border-radius: 10px;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 10px;
-}
-
-.info {
-    line-height: 1.5;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
 }
 
 footer{
-    background-color: #181819;
+    background-color: #071223;
     color: white;
     padding: 20px 0;
 }
@@ -342,33 +198,6 @@ footer{
         position: relative;
         overflow: hidden;
         z-index: 100;
-    }
-    
-    .card{
-        margin-left: 10px;
-        margin-bottom: 20px
-    }
-
-    .card:hover{
-        width: 90%;
-    }
-
-    .card:hover .image{
-        transition-delay: .75s;
-        top: 15%;
-        left: 80%;
-        height: 120px;
-        transform: translate(-50%, -50%);
-        scale: (1) rotate(15deg);
-    }
-
-    .card .content{
-        width: 75%;
-        left: 0%;
-        padding: 10px 10px 10px 10px;
-        opacity: 0;
-        transition: .5s;
-        visibility: hidden;
     }
     
     
