@@ -140,23 +140,53 @@ header nav a:hover:after {
     overflow: hidden;
     z-index: 100;
 }
+
+.event_name {
+    position: relative;
+    font-size: 50px;
+    color: transparent;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.event_name::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: revealText 5s linear infinite;
+}
+
+@keyframes revealText {
+    0% {
+        width: 0%; /* Start with no width */
+    }
+    100% {
+        width: 100%; /* Fully reveal the text */
+    }
+}
+
+
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: fit-content;
+    margin: 0 auto; /* Centering horizontally */
+    text-align: center;
   }
   
 .card{
     position: relative;
     width: 350px;
     height: 350px;
-    display: block;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     transition: .5s;
     border-radius: 20px;
-    margin-bottom: 10%;
-    margin-top: 10%;
+    margin-bottom: 20px;
+    margin-left: 20px;
     transition-delay: .5s;
 }
 
@@ -184,8 +214,6 @@ header nav a:hover:after {
     left: 0;
     height: 350px;
     width: 350px;
-    border-radius: 50%;
-    background: transparent;
     border: 8px solid var(--clr);
     filter: drop-shadow(0 0 10px var(--clr))
     drop_shadow(0 0 60px var(--clr));
@@ -201,14 +229,15 @@ header nav a:hover:after {
     background: var(--clr);
 }
 
-.card .circle .logo{
+.card .circle .name{
     position: relative;
-    width: 250px;
     transition: .5s;
     transition-delay: .5s;
+    font-size: 300%;
+    max-width: 200px;
 }
 
-.card:hover .circle .logo{
+.card:hover .circle .name{
     transform: scale(0);
     transition-delay: 0s;
 }
@@ -335,7 +364,6 @@ footer{
         overflow: hidden;
         z-index: 100;
     }
-    
     .cards-container {
         display: flex;
         flex-wrap: wrap;
@@ -387,5 +415,30 @@ footer{
         border-radius: 8px; /* Adjusted border-radius for smaller screens */
     }
     
+    .card .image {
+        width: 80%; /* Ensure image takes full width */
+        max-height: 200px; /* Adjusted max-height for smaller screens */
+        height: auto; /* Allow image height to adjust based on content */
+        transition: .5s ease-in-out;
+    }
+    
+    .card .content {
+        padding: 20px; /* Adjusted padding for smaller screens */
+    }
+    
+    .card .content h2 {
+        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+        line-height: 1.2; /* Adjusted line height for smaller screens */
+    }
+    
+    .card .content p {
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+    }
+    
+    .card .content a {
+        padding: 8px 16px; /* Adjusted padding for smaller screens */
+        font-size: 0.8rem; /* Adjusted font size for smaller screens */
+        border-radius: 8px; /* Adjusted border-radius for smaller screens */
+    }
     
 }
