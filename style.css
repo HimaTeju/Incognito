@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap'); 
-
-
 *{
     margin: 0;
     padding: 0;
@@ -64,7 +62,7 @@ header nav a:hover:after {
 .home {
     display: flex;
     height: 125vh;
-    background: linear-gradient(to top, #6c6e71 30%, #393a3b);
+    background: linear-gradient(to top, #071223 30%, #1c78d3);
     position: relative;
     overflow: hidden;
 }
