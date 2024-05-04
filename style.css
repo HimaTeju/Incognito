@@ -132,7 +132,7 @@ header nav a:hover:after {
 }
 .events {
     padding: 50px;
-    background: #181819;
+    background: #071223;
     color: white;
     position: relative;
     overflow: hidden;
@@ -282,7 +282,7 @@ header nav a:hover:after {
 }
 
 footer{
-    background-color: #181819;
+    background-color: #071223;
     color: white;
     padding: 20px 0;
 }
