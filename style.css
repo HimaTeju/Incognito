@@ -144,9 +144,23 @@ header nav a:hover:after {
     background-image: url('assets/bgmm.jpg');
     background-size: cover;
     background-position: center;
+    z-index: 101;
 }
 
 .event-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-container-alternate {
+    background-color: #071223;
+    background-size: cover;
+    background-position: center;
+    z-index: 101;
+}
+
+.event-flex-alternate{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -218,7 +232,73 @@ header nav a:hover:after {
     color: white;
 }
 
-.events {
+.text2 {
+    flex: 1;
+    /* Take remaining space */
+    padding: 0px;
+    color: aliceblue;
+    text-align: left;
+    margin-left: 80px;
+    bottom: 30px;
+}
+
+.text2 h2 {
+    margin-bottom: 12px;
+}
+
+.text2 p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+
+.image2 {
+    flex: 1;
+    /* Take remaining space */
+    padding: 10px;
+    text-align: center;
+    margin-top: 0px;
+
+}
+
+.image2 img {
+    max-width: 50%;
+
+}
+
+.button {
+    padding: 10px 20px;
+    border: 2px solid #f48bf4;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.button:hover {
+    background-color: rgb(177, 34, 177);
+    color: white;
+}
+
+.download-button {
+    background-color: #59137f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.event-coordinator h2{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.events-section {
     padding: 50px;
     background: #071223;
     color: white;
@@ -316,22 +396,22 @@ header nav a:hover:after {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0) rotate(315deg);
-    height: 300px;
+    height: 10%;
     transition: .5s ease-in-out;
 }
 
 .card:hover .image{
     transition-delay: .75s;
-    top: 50%;
-    left: 75%;
-    height: 200px;
+    top: 30%;
+    left: 80%;
+    height: 50%;
     transform: translate(-50%, -50%);
     scale: (1) rotate(15deg);
 }
 
 .card .content{
     position: absolute;
-    width: 50%;
+    width: 75%;
     left: 20%;
     padding: 20px 20px 20px 40px;
     opacity: 0;
@@ -351,6 +431,7 @@ header nav a:hover:after {
     text-transform: capitalize;
     font-size: 2.5rem;
     line-height: 1cm;
+    width: 100%;
 }
 
 .card .content p{
