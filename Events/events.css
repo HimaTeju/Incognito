@@ -63,7 +63,7 @@ header nav a:hover:after {
 }
 .home {
     display: flex;
-    height: 120vh;
+    height: 90vh;
     background: linear-gradient(to top, #6c6e71 30%, #393a3b);
     position: relative;
     overflow: hidden;
@@ -108,19 +108,20 @@ header nav a:hover:after {
 }
 
 .rules-regulations {
-    padding: 50px;
+    padding: 30px;
     padding-top: 10px; /* Increase padding top for more space */
     background-color:#071223;
     color: #fff; /* Use a slightly lighter color for better contrast */
     position: relative;
     overflow: hidden;
-    line-height: 1.6;
+    line-height: 1.8;
     font-size: 18px;
     z-index: 100;
+    
 }
 
 .rules-regulations h2 {
-    margin-top: 10px; /* Add space above each heading */
+    margin-top: 30px; /* Add space above each heading */
 }
 
 .rules-regulations ul {
@@ -136,7 +137,7 @@ header nav a:hover:after {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 20px;
+    margin: 30px;
 }
 
 footer{
