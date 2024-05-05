@@ -298,27 +298,57 @@ header nav a:hover:after {
     margin-bottom: 50px;
 }
 
-.events-section {
-    padding: 50px;
-    background: #071223;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    z-index: 100;
+@media screen and (max-width: 768px) {
+  
+    .event-container,.event-container-alternate {
+        flex-direction: column;
+        /* Display items in a column for smaller screens */
+        height: auto;
+        /* Auto height */
+        padding: 30px 20px;
+        /* Adjust padding */
+    }
+
+    .text1,
+    .text2 {
+        margin: 10px 0;
+        /* Adjust margin */
+        text-align: center;
+        /* Center align text */
+    }
+
+    .image1,
+    .image2 {
+        margin: 20px 0;
+        /* Adjust margin */
+        text-align: center;
+        /* Center align image */
+    }
+
+    .image1 img,
+    .image2 img {
+        max-width: 80%;
+        /* Adjust image width */
+    }
+
+    .event-flex{
+        flex-direction: column;
+    }
+
+    .event-flex-alternate{
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    }
+
+    .text1 h3, .text2 h3{
+        margin-bottom: 30px;
+    }
+
+    .image1 img, .image2 img{
+        max-width: 150px !important;
+    }
+
 }
-
-.event_name {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    margin-top: 30px;
-}
-
-
-.cards-container {
-    width: fit-content;
-    margin: 0 auto; /* Centering horizontally */
-    text-align: center;
-  }
   
 .card{
     position: relative;
