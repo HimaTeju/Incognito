@@ -101,7 +101,7 @@ header nav a:hover:after {
     transform: translate(-50%, -50%);
     color: rgba(31,107,238,255);
     font-size: 40px;
-    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 0 5px red, 0 0 0px red, 0 0 0px red, 0 0 40px #111, 0 0 80px #111, 0 0 90px #111, 0 0 100px #030036, 0 0 150px #030036;
     z-index: 0;
 }
 
@@ -130,6 +130,94 @@ header nav a:hover:after {
     margin-top: 2%;
 
 }
+.eventsname h2 {
+    text-align: center;
+    text-shadow: 0 0 5px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 40px #6b186b, 0 0 80px #6b186b, 0 0 90px #6b186b, 0 0 100px #030036, 0 0 150px #030036;
+    margin-bottom: 50px;
+    font-size: 40px;
+    color: #fff;
+}
+
+/* Event one poster making*/
+
+.event-container {
+    background-image: url('assets/bgmm.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.event-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text1 {
+    flex: 1;
+    /* Take remaining space */
+    padding: 0px;
+    color: aliceblue;
+    text-align: left;
+    margin-right: 50px;
+    bottom: 30px;
+}
+
+.text1 h2 {
+    margin-bottom: 12px;
+}
+
+.text1 p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+
+.image1 {
+    flex: 1;
+    /* Take remaining space */
+    padding: 10px;
+    text-align: center;
+    margin-top: 0px;
+
+}
+
+.image1 img {
+    max-width: 40%;
+
+}
+
+.button {
+    padding: 10px 20px;
+    border: 2px solid #f48bf4;
+    border-radius: 20px;
+    background-color: transparent;
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.button:hover {
+    background-color: rgb(112, 38, 38);
+    color: white;
+}
+
+.landingbutton {
+    padding: 10px 20px;
+    border: 2px solid #f48bf4;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.landingbutton:hover {
+    background-color: purple;
+    color: white;
+}
+
 .events {
     padding: 50px;
     background: #071223;
@@ -190,11 +278,14 @@ header nav a:hover:after {
     left: 0;
     height: 350px;
     width: 350px;
-    border: 8px solid var(--clr);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
     filter: drop-shadow(0 0 10px var(--clr))
     drop_shadow(0 0 60px var(--clr));
     transition: .5s, background .5s;
     transition-delay: .75s, 1s;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 1px 12px rgba(255, 255, 255, 0.25);
 }
 
 .card:hover .circle::before{
@@ -212,6 +303,7 @@ header nav a:hover:after {
     font-size: 300%;
     max-width: 300px;
     text-align: center;
+    color: #fff;
 }
 
 .card:hover .circle .name{
@@ -255,14 +347,14 @@ header nav a:hover:after {
 }
 
 .card .content h2{
-    color: #111;
+    color: #fff;
     text-transform: capitalize;
     font-size: 2.5rem;
     line-height: 1cm;
 }
 
 .card .content p{
-    color: #111;
+    color: #fff;
 }
 
 .card .content a{
