@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap'); 
 *{
     margin: 0;
@@ -101,7 +102,7 @@ header nav a:hover:after {
     transform: translate(-50%, -50%);
     color: rgba(31,107,238,255);
     font-size: 40px;
-    text-shadow: 0 0 5px red, 0 0 0px red, 0 0 0px red, 0 0 40px #111, 0 0 80px #111, 0 0 90px #111, 0 0 100px #030036, 0 0 150px #030036;
+    text-shadow: 0 0 5px #071223, 0 0 0px #071223, 0 0 0px #071223, 0 0 40px #071223, 0 0 80px #071223, 0 0 90px #071223, 0 0 100px #071223, 0 0 150px #071223;
     z-index: 0;
 }
 
@@ -164,6 +165,7 @@ header nav a:hover:after {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 450px;
 }
 
 .text1 {
@@ -171,7 +173,7 @@ header nav a:hover:after {
     /* Take remaining space */
     padding: 0px;
     color: aliceblue;
-    text-align: left;
+    text-align: 10px;
     margin-right: 50px;
     bottom: 30px;
 }
@@ -555,5 +557,110 @@ footer{
         text-align: center;
         bottom: 15%;
     }
-    
 }
+
+.gamecard_container{
+    background-color:#071223;
+}
+.gamecard_container img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.grid {
+  width: min-content;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-auto-rows: 300px;
+  gap: 1rem;
+}
+
+.gamecard {
+  aspect-ratio: 1;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.gamecard-img {
+  position: absolute;
+  z-index: 100;
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gamecard:hover .gamecard-img {
+  scale: 0.85;
+  filter: brightness(0.65);
+}
+
+.gamecard-box {
+  padding: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  z-index: 101;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Positioning the Boxes inside the card */
+.box-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  justify-content: flex-end;
+}
+.box-2 {
+  grid-column: 2 / 2;
+  grid-row: 1 / 2;
+  align-items: flex-end;
+}
+.box-3 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 2;
+  justify-content: flex-end;
+}
+.box-4 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Offsetting the Boxes */
+.top-left {
+  transform: translate(-105%, -105%);
+}
+.top-right {
+  transform: translate(105%, -105%);
+}
+.bottom-right {
+  transform: translate(105%, 105%);
+}
+.bottom-left {
+  transform: translate(-105%, 105%);
+}
+
+.gamecard:hover .gamecard-box {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Styling the Content inside box */
+.gamecard-box > p {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0.85;
+}
+    
