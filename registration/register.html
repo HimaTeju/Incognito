@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incognito Event Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Incognito Event Registration</h1>
+    <form id="registrationForm">
+        <label for="participantName">Participant Name:</label>
+        <input type="text" id="participantName" name="participantName" required><br><br>
+
+        <label for="collegeName">College Name:</label>
+        <input type="text" id="collegeName" name="collegeName" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="event">Event:</label>
+        <select id="event" name="event" required>
+            <option value="" disabled selected>Select Event</option>
+            <option value="event1">Event 1</option>
+            <option value="event2">Event 2</option>
+            <!-- Add more options for other events -->
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
