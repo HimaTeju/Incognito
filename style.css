@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap'); 
-*{
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,7 +13,8 @@ header {
     align-items: center;
     height: 100px;
     padding: 0 5%;
-    position: fixed; /* Changed from absolute to fixed */
+    position: fixed;
+    /* Changed from absolute to fixed */
     width: 100%;
     z-index: 100;
 }
@@ -20,7 +22,8 @@ header {
 header nav {
     display: flex;
     gap: 30px;
-    position: relative; /* Add relative positioning to the parent nav */
+    position: relative;
+    /* Add relative positioning to the parent nav */
 }
 
 header nav ul {
@@ -32,7 +35,8 @@ header nav ul {
 
 header nav li {
     padding: 0 20px;
-    position: relative; /* Add relative positioning to the list items */
+    position: relative;
+    /* Add relative positioning to the list items */
 }
 
 header nav a {
@@ -41,7 +45,8 @@ header nav a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    position: relative; /* Add relative positioning to the anchor elements */
+    position: relative;
+    /* Add relative positioning to the anchor elements */
 }
 
 header nav a:after {
@@ -50,15 +55,18 @@ header nav a:after {
     background-color: #fff;
     height: 3px;
     width: 0;
-    left: 0; /* Start the line from the left */
+    left: 0;
+    /* Start the line from the left */
     bottom: -10px;
     transition: 0.5s;
 }
 
 header nav a:hover:after {
     width: 100%;
-    right: 0; /* Expand towards the right */
+    right: 0;
+    /* Expand towards the right */
 }
+
 .home {
     display: flex;
     height: 100vh;
@@ -66,21 +74,22 @@ header nav a:hover:after {
     position: relative;
     overflow: hidden;
 }
-.home .logo1{
+
+.home .logo1 {
     height: auto;
     width: 100%;
-    position:absolute;
-    align-content:normal;
-    z-index: 0;  
+    position: absolute;
+    align-content: normal;
+    z-index: 0;
 }
 
 
-.home .logo2{
-        height: auto;
-        width: 100%;
-        position:absolute;
-        align-content:normal;
-        z-index: 1;  
+.home .logo2 {
+    height: auto;
+    width: 100%;
+    position: absolute;
+    align-content: normal;
+    z-index: 1;
 }
 
 .home .title {
@@ -99,7 +108,7 @@ header nav a:hover:after {
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: rgba(31,107,238,255);
+    color: rgba(31, 107, 238, 255);
     font-size: 40px;
     text-shadow: 0 0 5px #071223, 0 0 0px #071223, 0 0 0px #071223, 0 0 40px #071223, 0 0 80px #071223, 0 0 90px #071223, 0 0 100px #071223, 0 0 150px #071223;
     z-index: 0;
@@ -107,9 +116,11 @@ header nav a:hover:after {
 
 .about {
     padding: 50px;
-    padding-top: 10px; /* Increase padding top for more space */
-    background-color:#071223;
-    color: #fff; /* Use a slightly lighter color for better contrast */
+    padding-top: 10px;
+    /* Increase padding top for more space */
+    background-color: #071223;
+    color: #fff;
+    /* Use a slightly lighter color for better contrast */
     position: relative;
     overflow: hidden;
     font-size: 16px;
@@ -118,7 +129,8 @@ header nav a:hover:after {
 }
 
 .about h2 {
-    margin-top: 10px; /* Add space above each heading */
+    margin-top: 10px;
+    /* Add space above each heading */
 }
 
 .about p {
@@ -130,6 +142,7 @@ header nav a:hover:after {
     margin-top: 2%;
 
 }
+
 .eventsname h2 {
     text-align: center;
     text-shadow: 0 0 5px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 40px #6b186b, 0 0 80px #6b186b, 0 0 90px #6b186b, 0 0 100px #030036, 0 0 150px #030036;
@@ -147,7 +160,7 @@ header nav a:hover:after {
     z-index: 101;
 }
 
-.event-flex{
+.event-flex {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,7 +173,7 @@ header nav a:hover:after {
     z-index: 101;
 }
 
-.event-flex-alternate{
+.event-flex-alternate {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -293,14 +306,15 @@ header nav a:hover:after {
 }
 
 
-.event-coordinator h2{
+.event-coordinator h2 {
     text-align: center;
     margin-bottom: 50px;
 }
 
 @media screen and (max-width: 768px) {
-  
-    .event-container,.event-container-alternate {
+
+    .event-container,
+    .event-container-alternate {
         flex-direction: column;
         /* Display items in a column for smaller screens */
         height: auto;
@@ -317,27 +331,29 @@ header nav a:hover:after {
         /* Center align text */
     }
 
-    .event-flex{
-          flex-direction: column;
-      }
-  
-      .event-flex-alternate{
-      flex-direction: column-reverse;
-      flex-wrap: wrap;
-      }
-  
-      .text1 h3, .text2 h3{
-          margin-bottom: 30px;
-      }
+    .event-flex {
+        flex-direction: column;
+    }
 
-      .image1, .image2{
-          margin-top: 20px;
-          width: 100%;
-      }
+    .event-flex-alternate {
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+    }
+
+    .text1 h3,
+    .text2 h3 {
+        margin-bottom: 30px;
+    }
+
+    .image1,
+    .image2 {
+        margin-top: 20px;
+        width: 100%;
+    }
 
 }
-  
-.card{
+
+.card {
     position: relative;
     width: 350px;
     height: 350px;
@@ -351,12 +367,12 @@ header nav a:hover:after {
     transition-delay: .5s;
 }
 
-.card:hover{
+.card:hover {
     width: 600px;
     transition-delay: .5s;
 }
 
-.card .circle{
+.card .circle {
     position: absolute;
     top: 0;
     left: 0;
@@ -368,7 +384,7 @@ header nav a:hover:after {
     align-items: center;
 }
 
-.card .circle::before{
+.card .circle::before {
     content: "";
     position: absolute;
     top: 0;
@@ -377,15 +393,14 @@ header nav a:hover:after {
     width: 350px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    filter: drop-shadow(0 0 10px var(--clr))
-    drop_shadow(0 0 60px var(--clr));
+    filter: drop-shadow(0 0 10px var(--clr)) drop_shadow(0 0 60px var(--clr));
     transition: .5s, background .5s;
     transition-delay: .75s, 1s;
     backdrop-filter: blur(30px);
     box-shadow: 0 1px 12px rgba(255, 255, 255, 0.25);
 }
 
-.card:hover .circle::before{
+.card:hover .circle::before {
     transition-delay: .5s;
     height: 100%;
     width: 100%;
@@ -393,7 +408,7 @@ header nav a:hover:after {
     background: var(--clr);
 }
 
-.card .circle .name{
+.card .circle .name {
     position: relative;
     transition: .5s;
     transition-delay: .5s;
@@ -403,12 +418,12 @@ header nav a:hover:after {
     color: #fff;
 }
 
-.card:hover .circle .name{
+.card:hover .circle .name {
     transform: scale(0);
     transition-delay: 0s;
 }
 
-.card .image{
+.card .image {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -417,7 +432,7 @@ header nav a:hover:after {
     transition: .5s ease-in-out;
 }
 
-.card:hover .image{
+.card:hover .image {
     transition-delay: .75s;
     top: 30%;
     left: 80%;
@@ -426,7 +441,7 @@ header nav a:hover:after {
     scale: (1) rotate(15deg);
 }
 
-.card .content{
+.card .content {
     position: absolute;
     width: 75%;
     left: 20%;
@@ -436,14 +451,14 @@ header nav a:hover:after {
     visibility: hidden;
 }
 
-.card:hover .content{
+.card:hover .content {
     transition-delay: .75s;
     opacity: 1;
     visibility: visible;
     left: 2.5px;
 }
 
-.card .content h2{
+.card .content h2 {
     color: #fff;
     text-transform: capitalize;
     font-size: 2.5rem;
@@ -451,11 +466,11 @@ header nav a:hover:after {
     width: 100%;
 }
 
-.card .content p{
+.card .content p {
     color: #fff;
 }
 
-.card .content a{
+.card .content a {
     position: relative;
     color: #111;
     background: #fff;
@@ -471,31 +486,96 @@ header nav a:hover:after {
     line-height: 1.5;
 }
 
-footer{
+.map-container {
+    background-color: #071223;
+    position: relative;
+    width: 100%;
+    height: 600px;
+    color: #fff;
+    text-align: center;
+}
+
+.map-container h2 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.organizer-wrapper {
+    background-color: #071223;
+    position: relative;
+    text-align: center; /* Ensure relative positioning for absolute children */
+}
+
+.organizer-container {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    z-index: 1; /* Ensure content is above background image */
+}
+
+.collegebg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0; /* Ensure background is behind content */
+}
+
+.logo {
+    width: 100px;
+    position: relative;
+    z-index: 2; /* Ensure logo is above content */
+    margin: 0 auto;
+}
+
+.content {
+    position: relative;
+    z-index: 2; /* Ensure content is above background */
+}
+
+
+iframe {
+    overflow-clip-margin: content-box !important;
+    overflow: clip !important;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    width: 60%;
+}
+
+footer {
     background-color: #071223;
     color: white;
     padding: 20px 0;
 }
 
-.footer_content{
+.footer_content {
     width: 80%;
     margin: auto;
     text-align: center;
 }
 
-.footer_content a{
+.footer_content a {
     color: white;
 }
 
-.footer_content a:hover{
+.footer_content a:hover {
     color: aqua;
 }
 
-@media screen and (max-width: 768px){
-    header nav ul{
+@media screen and (max-width: 768px) {
+    header nav ul {
         display: none;
     }
-    header nav ul.active{
+
+    header nav ul.active {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -504,36 +584,42 @@ footer{
         width: 100%;
         background-color: #111;
     }
-    header nav ul.active li{
+
+    header nav ul.active li {
         padding: 10px 0;
     }
-    header nav ul.active li a{
+
+    header nav ul.active li a {
         padding: 10px 20px;
     }
-    .home{
-        height:25vh;
+
+    .home {
+        height: 25vh;
     }
-    .home img{
-        height:100vh;
+
+    .home img {
+        height: 100vh;
     }
-    .home .title{
+
+    .home .title {
         font-size: 60px;
     }
-    .home .title1{
+
+    .home .title1 {
         font-size: 10px;
     }
-    
-    .card{
+
+    .card {
         margin-left: 10px;
         margin-bottom: 20px;
         height: 500px;
     }
 
-    .card:hover{
+    .card:hover {
         width: 90%;
     }
 
-    .card:hover .image{
+    .card:hover .image {
         transition-delay: .75s;
         top: 15%;
         left: 50%;
@@ -542,7 +628,7 @@ footer{
         scale: (1) rotate(15deg);
     }
 
-    .card .content{
+    .card .content {
         width: 100%;
         left: 0%;
         top: 30%;
@@ -551,114 +637,125 @@ footer{
         transition: .5s;
         visibility: hidden;
     }
-    .circle .name{
+
+    .circle .name {
         text-align: center;
         bottom: 15%;
     }
+
+    iframe {
+        width: 90%;
+    }
 }
 
-.gamecard_container{
-    background-color:#071223;
+.gamecard_container {
+    background-color: #071223;
 }
+
 .gamecard_container img {
-  width: 100%;
-  height: 100%;
-  display: block;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .grid {
-  width: min-content;
-  display: grid;
-  grid-template-columns: repeat(3, 300px);
-  grid-auto-rows: 300px;
-  gap: 1rem;
+    width: min-content;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-auto-rows: 300px;
+    gap: 1rem;
 }
 
 .gamecard {
-  aspect-ratio: 1;
-  background-size: cover;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 0.5rem;
-  padding: 0.5rem;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  justify-content: center;
+    aspect-ratio: 1;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0.5rem;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    justify-content: center;
 }
 
 .gamecard-img {
-  position: absolute;
-  z-index: 100;
-  object-fit: cover;
-  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: absolute;
+    z-index: 100;
+    object-fit: cover;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .gamecard:hover .gamecard-img {
-  scale: 0.85;
-  filter: brightness(0.65);
+    scale: 0.85;
+    filter: brightness(0.65);
 }
 
 .gamecard-box {
-  padding: 0.8rem;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
-  transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  position: relative;
-  z-index: 101;
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
+    padding: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    z-index: 101;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Positioning the Boxes inside the card */
 .box-1 {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  justify-content: flex-end;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    justify-content: flex-end;
 }
+
 .box-2 {
-  grid-column: 2 / 2;
-  grid-row: 1 / 2;
-  align-items: flex-end;
+    grid-column: 2 / 2;
+    grid-row: 1 / 2;
+    align-items: flex-end;
 }
+
 .box-3 {
-  grid-column: 1 / 2;
-  grid-row: 2 / 2;
-  justify-content: flex-end;
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+    justify-content: flex-end;
 }
+
 .box-4 {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  justify-content: flex-end;
-  align-items: flex-end;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 /* Offsetting the Boxes */
 .top-left {
-  transform: translate(-105%, -105%);
+    transform: translate(-105%, -105%);
 }
+
 .top-right {
-  transform: translate(105%, -105%);
+    transform: translate(105%, -105%);
 }
+
 .bottom-right {
-  transform: translate(105%, 105%);
+    transform: translate(105%, 105%);
 }
+
 .bottom-left {
-  transform: translate(-105%, 105%);
+    transform: translate(-105%, 105%);
 }
 
 .gamecard:hover .gamecard-box {
-  opacity: 1;
-  transform: translate(0, 0);
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 /* Styling the Content inside box */
-.gamecard-box > p {
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
-  opacity: 0.85;
+.gamecard-box>p {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.85;
 }
-    
