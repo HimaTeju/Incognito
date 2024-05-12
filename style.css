@@ -97,7 +97,7 @@ header nav a:hover:after {
 
 .home .title1 {
     position: absolute;
-    top: 20%;
+    top: 19%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgba(31,107,238,255);
@@ -107,7 +107,7 @@ header nav a:hover:after {
 }
 
 .about {
-    padding: 50px;
+    padding: 15px;
     padding-top: 10px; /* Increase padding top for more space */
     background-color:#071223;
     color: #fff; /* Use a slightly lighter color for better contrast */
@@ -116,19 +116,22 @@ header nav a:hover:after {
     font-size: 16px;
     line-height: 1.6;
     z-index: 100;
+    text-align:justify;
 }
 
 .about h2 {
-    margin-top: 10px; /* Add space above each heading */
+    margin-top: 10px;
+    font-size: 35px; /* Add space above each heading */
 }
 
 .about p {
-    text-align: center;
-    word-spacing: 1mm;
+    text-align:justify;
+    word-spacing: 2px;
     letter-spacing: .6mm;
     margin-right: 10%;
     margin-left: 10%;
     margin-top: 2%;
+    
 
 }
 .eventsname h2 {
@@ -349,7 +352,7 @@ header nav a:hover:after {
     transition: .5s;
     border-radius: 20px;
     margin-bottom: 20px;
-    margin-left: 20px;
+    margin-left: 10px;
     transition-delay: .5s;
 }
 
@@ -493,9 +496,9 @@ footer{
     color: aqua;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 830px){
     header nav ul{
-        display: none;
+        display:none;
     }
     header nav ul.active{
         display: flex;
@@ -519,15 +522,26 @@ footer{
         height:100vh;
     }
     .home .title{
-        font-size: 60px;
+        font-size: 40px;
+        top: 34%;
     }
     .home .title1{
-        font-size: 10px;
+        font-size: 12px;
+    }
+
+    .about p{
+        font-size: 12px !important;
+        font-weight: 300;
+        line-height: 1.40;
+        margin: 2%;
+        word-spacing: 0.1%;
+        
+        
     }
     
     .card{
-        margin-left: 10px;
-        margin-bottom: 20px;
+        margin-left: -25px;
+        margin-bottom: -8px;
         height: 500px;
     }
 
@@ -556,6 +570,7 @@ footer{
     .circle .name{
         text-align: center;
         bottom: 15%;
+        
     }
 }
 
