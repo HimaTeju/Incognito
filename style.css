@@ -619,9 +619,14 @@ footer {
     }
 
     .card {
-        margin-left: 10px;
+        margin-left: 0px;
         margin-bottom: 20px;
         height: 500px;
+    }
+
+    .card .circle::before{
+        height: 350px;
+        width: 350px;
     }
 
     .card:hover {
@@ -656,6 +661,11 @@ footer {
     iframe {
         width: 90%;
     }
+    
+    .organizer-container {
+        width: 100%;  
+    }
+    
 }
 
 .gamecard_container {
