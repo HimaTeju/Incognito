@@ -95,6 +95,7 @@ nav li:first-child :hover {
         width: 100%;
     }
 }
+
 .home {
     display: flex;
     height: 100vh;
@@ -120,15 +121,23 @@ nav li:first-child :hover {
     z-index: 1;
 }
 
+.home .logo3 {
+    display: none;
+}
+
+.home .logo4{
+    display: none;
+}
 @media (max-width: 768px){
     .home .logo1 {
         display: none;
     }
+
     .home .logo2 {
         display: none;
     }
-
     .home .logo3 {
+        display: block;
         height: auto;
         width: 100%;
         position: absolute;
@@ -137,6 +146,7 @@ nav li:first-child :hover {
     }
     
     .home .logo4 {
+        display: block;
         height: auto;
         width: 100%;
         position: absolute;
@@ -157,6 +167,7 @@ nav li:first-child :hover {
 }
 
 .home .title1 {
+    white-space: nowrap;
     position: absolute;
     top: 19%;
     left: 50%;
