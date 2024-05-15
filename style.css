@@ -88,6 +88,9 @@ nav li:first-child :hover {
     .menu{
         display: block;
     }
+    nav li:first-child {
+        scale: 1;
+    }
 }
 
 @media screen and (max-width: 431px) {
