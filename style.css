@@ -41,6 +41,11 @@ nav a:hover {
 
 nav li:first-child {
     margin-right: auto;
+    scale: .5;
+}
+
+nav li:first-child :hover {
+    background-color: transparent;
 }
 
 .sidebar {
@@ -90,6 +95,7 @@ nav li:first-child {
         width: 100%;
     }
 }
+
 .home {
     display: flex;
     height: 100vh;
@@ -115,6 +121,40 @@ nav li:first-child {
     z-index: 1;
 }
 
+.home .logo3 {
+    display: none;
+}
+
+.home .logo4{
+    display: none;
+}
+@media (max-width: 768px){
+    .home .logo1 {
+        display: none;
+    }
+
+    .home .logo2 {
+        display: none;
+    }
+    .home .logo3 {
+        display: block;
+        height: auto;
+        width: 100%;
+        position: absolute;
+        align-content: normal;
+        z-index: 0;
+    }
+    
+    .home .logo4 {
+        display: block;
+        height: auto;
+        width: 100%;
+        position: absolute;
+        align-content: normal;
+        z-index: 1;
+    }
+} 
+
 .home .title {
     position: absolute;
     top: 30%;
@@ -127,6 +167,7 @@ nav li:first-child {
 }
 
 .home .title1 {
+    white-space: nowrap;
     position: absolute;
     top: 19%;
     left: 50%;
@@ -598,20 +639,20 @@ footer {
 
 @media screen and (max-width: 768px) {
     .home {
-        height: 25vh;
-    }
-
-    .home img {
-        height: 100vh;
+        height: 55vh;
     }
 
     .home .title {
         font-size: 6.8vh;
+        top: 20%;
+        left: 50%;  
     }
 
     .home .title1 {
-        font-size: 1vh;
-        
+        font-size: 2.5vh;
+        white-space: nowrap;
+        top: 10%;
+        left: 50%;
     }
 
     .about {
