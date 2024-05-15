@@ -5,5 +5,14 @@ document.addEventListener('scroll', function() {
     let value = window.scrollY;
     title.style.marginTop = value * 1.1 + 'px';
     title1.style.marginTop = value * 1.5 + 'px';
-    
 });
+
+document.getElementById("menu").onclick = function() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.style.display = "flex";
+}
+
+document.getElementById("close").onclick = function() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.style.display = "none";
+}
