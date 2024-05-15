@@ -33,7 +33,7 @@ document.getElementById("register").addEventListener("click", async function (ev
     var event = document.getElementById("event").value;
     var mobileno = document.getElementById("mobileno").value;
   
-    await addDoc(collection(db, "events"), {
+    await addDoc(collection(db, event), {
       participantName: participantName,
       collegeName: collegeName,
       email: email,

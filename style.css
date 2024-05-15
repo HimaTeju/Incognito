@@ -7,66 +7,89 @@
     font-family: 'Orbitron', sans-serif;
 }
 
-header {
+nav{
+    background-color: #071223;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+nav ul {
+    width: 100%;
+    list-style: none;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
-    height: 100px;
-    padding: 0 5%;
-    position: fixed;
-    /* Changed from absolute to fixed */
-    width: 100%;
-    z-index: 100;
 }
 
-header nav {
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
     display: flex;
-    gap: 30px;
-    position: relative;
-    /* Add relative positioning to the parent nav */
-}
-
-header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-header nav li {
-    padding: 0 20px;
-    position: relative;
-    /* Add relative positioning to the list items */
-}
-
-header nav a {
-    display: block;
     color: white;
-    text-align: center;
-    padding: 14px 16px;
+    align-items: center;
+    padding: 0px 30px;
     text-decoration: none;
-    position: relative;
-    /* Add relative positioning to the anchor elements */
 }
 
-header nav a:after {
-    content: "";
-    position: absolute;
+nav a:hover {
     background-color: #fff;
-    height: 3px;
-    width: 0;
-    left: 0;
-    /* Start the line from the left */
-    bottom: -10px;
-    transition: 0.5s;
+    color: #071223;
 }
 
-header nav a:hover:after {
-    width: 100%;
+nav li:first-child {
+    margin-right: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
     right: 0;
-    /* Expand towards the right */
+    height: 100vh;
+    width: 250px;
+    background: #07122395;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
+.sidebar li{
+    width: 100%;
+}
+.sidebar a {
+    width: 100%;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: all 0.5s;
+}
+
+.menu{
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .hideonmobile {
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 431px) {
+    .sidebar {
+        width: 100%;
+    }
+}
 .home {
     display: flex;
     height: 100vh;
@@ -117,16 +140,11 @@ header nav a:hover:after {
 .about {
     padding: 50px;
     padding-top: 10px;
-    /* Increase padding top for more space */
     background-color: #071223;
     color: #fff;
-    /* Use a slightly lighter color for better contrast */
-    position: relative;
-    overflow: hidden;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.6;
-    z-index: 100;
-    text-align:justify;
+    text-align: justify;
 }
 
 .about h2 {
@@ -141,8 +159,6 @@ header nav a:hover:after {
     margin-right: 10%;
     margin-left: 10%;
     margin-top: 2%;
-    
-
 }
 
 .eventsname h2 {
@@ -503,7 +519,8 @@ header nav a:hover:after {
 }
 
 .organizer-wrapper {
-    background-color: #071223;
+    background-color: #071223ee;
+    backdrop-filter: blur(20px);
     position: relative;
     text-align: center;
     height: 100vh;
@@ -580,28 +597,6 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    header nav ul {
-        display: none;
-    }
-
-    header nav ul.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        width: 100%;
-        background-color: #111;
-    }
-
-    header nav ul.active li {
-        padding: 10px 0;
-    }
-
-    header nav ul.active li a {
-        padding: 10px 20px;
-    }
-
     .home {
         height: 25vh;
     }
@@ -611,13 +606,33 @@ footer {
     }
 
     .home .title {
-        font-size: 60px;
+        font-size: 6.8vh;
     }
 
     .home .title1 {
-        font-size: 10px;
+        font-size: 1vh;
+        
     }
 
+    .about {
+        padding: 0px;
+        padding-top: 10px;
+        background-color: #071223;
+        color: #fff;
+        font-size: 12px;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .about p {
+        text-align: center;
+        word-spacing: 2px;
+        letter-spacing: .6mm;
+        margin-right: 4%;
+        margin-left: 4%;
+        margin-top: 2%;
+    }
+    
     .card {
         margin-left: 0px;
         margin-bottom: 20px;
@@ -668,114 +683,4 @@ footer {
     
 }
 
-.gamecard_container {
-    background-color: #071223;
-}
 
-.gamecard_container img {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-.grid {
-    width: min-content;
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    grid-auto-rows: 300px;
-    gap: 1rem;
-}
-
-.gamecard {
-    aspect-ratio: 1;
-    background-size: cover;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0.5rem;
-    padding: 0.5rem;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    justify-content: center;
-}
-
-.gamecard-img {
-    position: absolute;
-    z-index: 100;
-    object-fit: cover;
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.gamecard:hover .gamecard-img {
-    scale: 0.85;
-    filter: brightness(0.65);
-}
-
-.gamecard-box {
-    padding: 0.8rem;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    position: relative;
-    z-index: 101;
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Positioning the Boxes inside the card */
-.box-1 {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    justify-content: flex-end;
-}
-
-.box-2 {
-    grid-column: 2 / 2;
-    grid-row: 1 / 2;
-    align-items: flex-end;
-}
-
-.box-3 {
-    grid-column: 1 / 2;
-    grid-row: 2 / 2;
-    justify-content: flex-end;
-}
-
-.box-4 {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-
-/* Offsetting the Boxes */
-.top-left {
-    transform: translate(-105%, -105%);
-}
-
-.top-right {
-    transform: translate(105%, -105%);
-}
-
-.bottom-right {
-    transform: translate(105%, 105%);
-}
-
-.bottom-left {
-    transform: translate(-105%, 105%);
-}
-
-.gamecard:hover .gamecard-box {
-    opacity: 1;
-    transform: translate(0, 0);
-}
-
-/* Styling the Content inside box */
-.gamecard-box>p {
-    font-size: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    opacity: 0.85;
-}
