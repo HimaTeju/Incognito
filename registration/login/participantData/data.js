@@ -27,6 +27,7 @@ querySnapshot.forEach((doc) => {
                         <td>${data.participantName}</td>
                         <td>${data.event}</td>
                         <td>${data.collegeName}</td>
+                        <td>${data.mobileno}</td>
                     </tr>`;
         tableBody.insertAdjacentHTML('beforeend', row);
     } else {

@@ -28,7 +28,6 @@ h1 {
     border-spacing: 0;
     width: 100%;
     background: #071223;
-    border-radius: 20px;
     overflow: hidden;
 }
 
@@ -42,6 +41,7 @@ h1 {
     color: #fff;
     font-weight: bold;
     text-align: left;
+    background-color: #1d2a3a; /* Change header background color here */
 }
 
 #data-table tbody tr:nth-child(odd) {
@@ -64,4 +64,3 @@ h1 {
 }
 
 /* Remove shadow on the first row */
-
