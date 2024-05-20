@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 //import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
-import { getFirestore, addDoc, collection} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getFirestore, addDoc, collection, getDocs} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -42,4 +42,12 @@ document.getElementById("register").addEventListener("click", async function (ev
     });
   
     alert("Registered Successfully!");
+});
+
+document.getElementById("show").addEventListener("click", async function (event) {
+  event.preventDefault();
+  const querySnapshot = await getDocs(collection(db, "CODING"));
+  querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
   });
+});

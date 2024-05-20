@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -34,8 +35,7 @@ label {
 
 input[type="text"],
 input[type="email"],
-select,
-input[type="number"] {
+input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -44,6 +44,27 @@ input[type="number"] {
     border-radius: 4px;
     box-shadow: inset 4px 4px 8px #000, inset -4px -4px 8px #1d2a3a;
     color: #fff;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input[type="password"] {
+    padding-right: 50px; /* Space for the toggle button */
+}
+
+.material-icons {
+    position: absolute;
+    right: 10px;
+    top: 35%;
+    transform: translateY(-50%);
+    background-color: #071223;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 24px;
 }
 
 input[type="submit"] {
@@ -63,16 +84,23 @@ input[type="submit"]:hover {
     background-color: #0d233f;
 }
 
-.login{
-    margin: 20px 0;
+.registration-info {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #071223;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 8px 8px 16px #000, -8px -8px 16px #1d2a3a;
+    color: #fff;
     text-align: center;
 }
 
-.login a{
-    color: #fff;
+.register-link a {
+    color: #1e90ff;
     text-decoration: none;
+    font-weight: bold;
 }
 
-.login a:hover{
+.register-link a:hover {
     text-decoration: underline;
 }
