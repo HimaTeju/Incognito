@@ -1,13 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-//import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
 import { getFirestore, addDoc, collection, getDocs} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyADE_pHLRGB3BHDSXkQli7SRnaOvhHOOjM",
     authDomain: "incognito-spm2024.firebaseapp.com",
@@ -20,29 +15,68 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-//const analytics = getAnalytics(app);
 const db = getFirestore(app);
+
+const eventLinks = {
+  "FIFA": "https://chat.whatsapp.com/EojjoGSReFh38FHExmQL40",
+  "BGMI": "https://chat.whatsapp.com/Hz9Z6Z9Z6Zz1ZzZzZzZzZz",
+  "ITQUIZ": "https://chat.whatsapp.com/B85g6RbPsWAHXxkrxOfHRR"
+};
+
+// Get modal element
+var modal = document.getElementById("thankYouModal");
+
+// Get close button element
+var span = document.getElementsByClassName("close")[0];
+
+// Get thank you message element
+var thankYouMessage = document.getElementById("thankYouMessage");
 
 document.getElementById("register").addEventListener("click", async function (event) {
     console.log("Register button clicked");
     event.preventDefault(); // Prevent default form submission behavior
-  
+
     var participantName = document.getElementById("participantName").value;
     var collegeName = document.getElementById("collegeName").value;
     var email = document.getElementById("email").value;
-    var event = document.getElementById("event").value;
+    var eventSelected = document.getElementById("event").value;
     var mobileno = document.getElementById("mobileno").value;
-  
-    await addDoc(collection(db, event), {
-      participantName: participantName,
-      collegeName: collegeName,
-      email: email,
-      mobileno: mobileno,
-      event: event // Save selected event in Firestore
-    });
-  
-    alert("Registered Successfully!");
+
+    try {
+        await addDoc(collection(db, eventSelected), {
+            participantName: participantName,
+            collegeName: collegeName,
+            email: email,
+            mobileno: mobileno,
+            event: eventSelected // Save selected event in Firestore
+        });
+
+        const whatsappLink = eventLinks[eventSelected];
+
+        // Update the thank you message with the event name and WhatsApp link
+        thankYouMessage.innerHTML = `
+            Thank you for registering for the event - ${eventSelected}!<br>
+            Join our WhatsApp group for more updates: <a href="${whatsappLink}" target="_blank">Join WhatsApp Group</a>
+        `;
+        // Show the modal
+        modal.style.display = "block";
+    } catch (error) {
+        console.error("Error adding document: ", error);
+        alert("Error registering for the event. Please try again.");
+    }
 });
+
+// Close the modal when the close button is clicked
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Close the modal when the user clicks outside of it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 document.getElementById("show").addEventListener("click", async function (event) {
   event.preventDefault();

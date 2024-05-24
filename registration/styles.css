@@ -76,3 +76,59 @@ input[type="submit"]:hover {
 .login a:hover{
     text-decoration: underline;
 }
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #0d233f; /* Main background color */
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px; /* Rounded corners */
+    width: 60%; /* Adjusted width */
+    color: #ffffff; /* Text color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style for the thank you message */
+#thankYouMessage {
+    font-size: 18px; /* Increased font size */
+    line-height: 1.5; /* Improved line height */
+}
+
+/* Style for the link */
+.modal-content a {
+    color: #ffcc00; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
