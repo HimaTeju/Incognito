@@ -16,3 +16,20 @@ document.getElementById("close").onclick = function() {
     const sidebar = document.querySelector(".sidebar");
     sidebar.style.display = "none";
 }
+
+function showEvents(category) {
+
+    let tabs = ['technical', 'gaming', 'non-technical']
+    tabs.forEach(tab => {
+        let selectedTab = document.querySelector(`.${tab}`);
+        selectedTab.style.display = 'none';
+    });
+
+    let selectedTab = document.querySelector(`.${category}`);
+    selectedTab.style.display = 'block';
+}
+
+// Show Technical Events by default on page load
+document.addEventListener('DOMContentLoaded', () => {
+    showEvents('technical');
+});

@@ -205,6 +205,41 @@ nav li:first-child :hover {
     margin-top: 2%;
 }
 
+
+#tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #071223;
+    height: 120px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    height: 80px;
+    cursor: pointer;
+    border: none;
+    background-color: #071223;
+    color: white;
+    font-size: 16px;
+    border-radius: 12px;
+    box-shadow: 6px 6px 10px #000000,
+                -6px -6px 10px #071223;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.tab-button:hover {
+    background-color: white;
+    color: #071223;
+}
+
+.tab-button:focus {
+    background-color: white;
+    color: #071223;
+}
+
+
 .eventsname h2 {
     text-align: center;
     text-shadow: 0 0 5px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 40px #6b186b, 0 0 80px #6b186b, 0 0 90px #6b186b, 0 0 100px #030036, 0 0 150px #030036;
@@ -371,6 +406,10 @@ nav li:first-child :hover {
 .event-coordinator h2 {
     text-align: center;
     margin-bottom: 50px;
+}
+
+.technical, .gaming, .non-technical{
+    display: none;
 }
 
 @media screen and (max-width: 768px) {
