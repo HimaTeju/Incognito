@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getFirestore, addDoc, collection, getDocs} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyADE_pHLRGB3BHDSXkQli7SRnaOvhHOOjM",
@@ -17,20 +17,37 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Reference to the collection
-const querySnapshot = await getDocs(collection(db, "CODING"));
+document.addEventListener("DOMContentLoaded", () => {
+    const eventDropdown = document.getElementById("Event-dropdown");
+    const tableBody = document.querySelector("#data-table tbody");
 
-const tableBody = document.querySelector('#data-table tbody');
-querySnapshot.forEach((doc) => {
-    const data = doc.data();
-    if (data && data.participantName && data.event && data.collegeName) {
-        const row = `<tr>
-                        <td>${data.participantName}</td>
-                        <td>${data.event}</td>
-                        <td>${data.collegeName}</td>
-                        <td>${data.mobileno}</td>
-                    </tr>`;
-        tableBody.insertAdjacentHTML('beforeend', row);
-    } else {
-        console.error("Invalid data structure:", data);
+    async function filterParticipants(event) {
+        // Fetch participants data from Firebase based on the selected event
+        const querySnapshot = await getDocs(collection(db, event));
+        
+        // Clear existing table rows
+        tableBody.innerHTML = "";
+
+        // Iterate through query results and populate the table
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            if (data && data.participantName && data.event && data.collegeName && data.mobileno) {
+                const row = `<tr>
+                                <td>${data.participantName}</td>
+                                <td>${data.event}</td>
+                                <td>${data.collegeName}</td>
+                                <td>${data.mobileno}</td>
+                            </tr>`;
+                tableBody.insertAdjacentHTML('beforeend', row);
+            } else {
+                console.error("Invalid data structure:", data);
+            }
+        });
     }
+
+    // Event listener for event dropdown change
+    eventDropdown.addEventListener("change", (event) => {
+        const selectedEvent = event.target.value;
+        filterParticipants(selectedEvent);
+    });
 });

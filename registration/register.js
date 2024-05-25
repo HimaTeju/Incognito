@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getFirestore, addDoc, collection, getDocs} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,9 +18,16 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const eventLinks = {
-  "FIFA": "https://chat.whatsapp.com/EojjoGSReFh38FHExmQL40",
-  "BGMI": "https://chat.whatsapp.com/Hz9Z6Z9Z6Zz1ZzZzZzZzZz",
-  "ITQUIZ": "https://chat.whatsapp.com/B85g6RbPsWAHXxkrxOfHRR"
+    "IT QUIZ": "https://chat.whatsapp.com/B85g6RbPsWAHXxkrxOfHRR",
+    "CODING": "https://chat.whatsapp.com/Hz9Z6Z9Z6Zz1ZzZzZzZzZz",
+    "IT DUMB CHARADES": "N/A",
+    "LOGO DESIGN": "N/A",
+    "BGMI": "https://chat.whatsapp.com/Hz9Z6Z9Z6Zz1ZzZzZzZzZz",
+    "FIFA": "https://chat.whatsapp.com/EojjoGSReFh38FHExmQL40",
+    "TALENT SHOW": "https://chat.whatsapp.com/JJTb88vnYsAF7NbIrvFQct",
+    "TREASURE HUNT": "https://chat.whatsapp.com/FKVqfYiAVq11VcAsgUmRfn",
+    "VIDEOGRAPHY/PHOTOGRAPHY": "https://chat.whatsapp.com/DFNPGOAOgpyC1rfm9Gn7Zw",
+    "REELS": "https://chat.whatsapp.com/IEW6fo32lKF9ZCKbGyZFI1",
 };
 
 // Get modal element
@@ -67,21 +74,21 @@ document.getElementById("register").addEventListener("click", async function (ev
 });
 
 // Close the modal when the close button is clicked
-span.onclick = function() {
+span.onclick = function () {
     modal.style.display = "none";
 }
 
 // Close the modal when the user clicks outside of it
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
 
 document.getElementById("show").addEventListener("click", async function (event) {
-  event.preventDefault();
-  const querySnapshot = await getDocs(collection(db, "CODING"));
-  querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
-  });
+    event.preventDefault();
+    const querySnapshot = await getDocs(collection(db, "CODING"));
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
+    });
 });
