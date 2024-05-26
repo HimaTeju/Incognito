@@ -64,3 +64,26 @@ h1 {
 }
 
 /* Remove shadow on the first row */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #1d2a3a;
+    color: #fff;
+    box-shadow: 8px 8px 16px #000, 
+                -8px -8px 16px #1d2a3a;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+select option {
+    background-color: #071223;
+    color: #fff;
+}
