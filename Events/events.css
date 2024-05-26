@@ -135,6 +135,7 @@ header nav a:hover:after {
     margin-top: 40px;
 }
 .contact-info {
+
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
