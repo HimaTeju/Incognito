@@ -101,62 +101,45 @@ nav li:first-child :hover {
 
 .home {
     display: flex;
-    height: 100vh;
     background: #071223;
     position: relative;
     overflow: hidden;
 }
 
-.home .logo1 {
+.home .logo1, .home .logo2, .home .logo3, .home .logo4 {
     height: auto;
     width: 100%;
     position: absolute;
     align-content: normal;
+}
+
+.home .logo1 {
     z-index: 0;
 }
 
-
 .home .logo2 {
-    height: auto;
-    width: 100%;
-    position: absolute;
-    align-content: normal;
     z-index: 1;
 }
 
-.home .logo3 {
+.home .logo3, .home .logo4 {
     display: none;
 }
 
-.home .logo4{
-    display: none;
-}
-@media (max-width: 768px){
-    .home .logo1 {
+@media (max-width: 768px) {
+    .home .logo1, .home .logo2 {
         display: none;
     }
 
-    .home .logo2 {
-        display: none;
-    }
     .home .logo3 {
         display: block;
-        height: auto;
-        width: 100%;
-        position: absolute;
-        align-content: normal;
         z-index: 0;
     }
-    
+
     .home .logo4 {
         display: block;
-        height: auto;
-        width: 100%;
-        position: absolute;
-        align-content: normal;
         z-index: 1;
     }
-} 
+}
 
 .home .title {
     position: absolute;
