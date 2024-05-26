@@ -33,3 +33,45 @@ function showEvents(category) {
 document.addEventListener('DOMContentLoaded', () => {
     showEvents('technical');
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    function adjustHomeHeight() {
+        const homeSection = document.getElementById('home');
+        const images = homeSection.querySelectorAll('img');
+        let maxHeight = 0;
+
+        images.forEach(img => {
+            const style = window.getComputedStyle(img);
+            if (style.display !== 'none' && img.complete) {
+                if (img.height > maxHeight) {
+                    maxHeight = img.height;
+                }
+            }
+        });
+
+        homeSection.style.height = maxHeight + 'px';
+    }
+
+    // Adjust height after images load
+    const images = document.querySelectorAll('#home img');
+    let imagesLoaded = 0;
+    images.forEach(img => {
+        if (img.complete) {
+            imagesLoaded++;
+        } else {
+            img.onload = () => {
+                imagesLoaded++;
+                if (imagesLoaded === images.length) {
+                    adjustHomeHeight();
+                }
+            };
+        }
+    });
+
+    if (imagesLoaded === images.length) {
+        adjustHomeHeight();
+    }
+
+    // Re-adjust height on window resize
+    window.addEventListener('resize', adjustHomeHeight);
+});
