@@ -1,39 +1,40 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Existing functions for parallax, responsive nav bar, and tabs
-    const title = document.querySelector('.title');
-    const title1 = document.querySelector('.title1');
+const title = document.querySelector('.title');
+const title1 = document.querySelector('.title1');
 
-    document.addEventListener('scroll', function() {
-        let value = window.scrollY;
-        title.style.marginTop = value * 1.1 + 'px';
-        title1.style.marginTop = value * 1.5 + 'px';
+document.addEventListener('scroll', function() {
+    let value = window.scrollY;
+    title.style.marginTop = value * 1.1 + 'px';
+    title1.style.marginTop = value * 1.5 + 'px';
+});
+
+document.getElementById("menu").onclick = function() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.style.display = "flex";
+}
+
+document.getElementById("close").onclick = function() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.style.display = "none";
+}
+
+function showEvents(category) {
+
+    let tabs = ['technical', 'gaming', 'non-technical']
+    tabs.forEach(tab => {
+        let selectedTab = document.querySelector(`.${tab}`);
+        selectedTab.style.display = 'none';
     });
 
-    document.getElementById("menu").onclick = function() {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.style.display = "flex";
-    }
+    let selectedTab = document.querySelector(`.${category}`);
+    selectedTab.style.display = 'block';
+}
 
-    document.getElementById("close").onclick = function() {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.style.display = "none";
-    }
-
-    function showEvents(category) {
-        let tabs = ['technical', 'gaming', 'non-technical'];
-        tabs.forEach(tab => {
-            let selectedTab = document.querySelector(`.${tab}`);
-            selectedTab.style.display = 'none';
-        });
-
-        let selectedTab = document.querySelector(`.${category}`);
-        selectedTab.style.display = 'block';
-    }
-
-    // Show Technical Events by default on page load
+// Show Technical Events by default on page load
+document.addEventListener('DOMContentLoaded', () => {
     showEvents('technical');
+});
 
-    // Function to adjust the height of the home section
+document.addEventListener("DOMContentLoaded", function() {
     function adjustHomeHeight() {
         const homeSection = document.getElementById('home');
         const images = homeSection.querySelectorAll('img');
