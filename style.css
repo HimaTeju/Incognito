@@ -102,7 +102,7 @@ nav li:first-child :hover {
 .home {
     display: flex;
     height: 100vh;
-    background: linear-gradient(to top, #071223 30%, #1c78d3);
+    background: #071223;
     position: relative;
     overflow: hidden;
 }

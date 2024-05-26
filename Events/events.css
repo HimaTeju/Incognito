@@ -64,7 +64,7 @@ header nav a:hover:after {
 .home {
     display: flex;
     height: 90vh;
-    background: linear-gradient(to top, #6c6e71 30%, #393a3b);
+    background: #071223;
     position: relative;
     overflow: hidden;
 }
@@ -137,7 +137,7 @@ header nav a:hover:after {
 .contact-info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 30px;
 }
 
