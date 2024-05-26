@@ -239,6 +239,11 @@ nav li:first-child :hover {
     color: #071223;
 }
 
+.tab-button:focus.active {
+    background-color: rgb(214, 20, 20);
+    color: #071223;
+}
+
 
 .eventsname h2 {
     text-align: center;
@@ -513,7 +518,7 @@ nav li:first-child :hover {
     position: relative;
     transition: .5s;
     transition-delay: .5s;
-    font-size: 300%;
+    font-size: 295%;
     max-width: 300px;
     text-align: center;
     color: #fff;
