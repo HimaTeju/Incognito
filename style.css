@@ -606,7 +606,8 @@ nav li:first-child :hover {
     position: relative;
     text-align: center;
     height: 100vh;
-    
+    outline: 1px solid;
+    outline-color: #033784;
 }
 
 .organizer-container {
@@ -697,21 +698,11 @@ iframe {
 
 .footer_content a {
     color: white;
-    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer_content a:hover {
     color: aqua;
-}
-
-.footer_content i {
-    margin-right: 8px;
-    transition: transform 0.3s ease;
-}
-
-.footer_content a:hover i {
-    transform: scale(1.1);
 }
 
 
@@ -821,12 +812,14 @@ iframe {
 .countdown {
     background: #071223;
     font-family: "Montserrat", "sans-serif";
-    min-height: 100vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     color: white;
+    outline: 1px solid;
+    outline-color: #033784;
 }
 
 .clock-container {
