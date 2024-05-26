@@ -698,21 +698,11 @@ iframe {
 
 .footer_content a {
     color: white;
-    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer_content a:hover {
     color: aqua;
-}
-
-.footer_content i {
-    margin-right: 8px;
-    transition: transform 0.3s ease;
-}
-
-.footer_content a:hover i {
-    transform: scale(1.1);
 }
 
 
