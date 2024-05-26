@@ -1,66 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Orbitron', sans-serif;
 }
 
-header {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    height: 100px;
-    padding: 0 5%;
-    position: fixed; /* Changed from absolute to fixed */
-    width: 100%;
-    z-index: 100;
-}
-
-header nav {
-    display: flex;
-    gap: 30px;
-    position: relative; /* Add relative positioning to the parent nav */
-}
-
-header nav ul {
-    list-style-type: none;
+/* === removing default button style ===*/
+t.button {
     margin: 0;
+    height: auto;
+    background: transparent;
     padding: 0;
-    display: flex;
+    border: none;
+    cursor: pointer;
 }
 
-header nav li {
-    padding: 0 20px;
-    position: relative; /* Add relative positioning to the list items */
-}
-
-header nav a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+/* button styling */
+.button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255, 255, 255, 0.6);
+    --animation-color: #37FF8B;
+    --fs-size: 2em;
+    letter-spacing: 3px;
     text-decoration: none;
-    position: relative; /* Add relative positioning to the anchor elements */
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
 }
 
-header nav a:after {
-    content: "";
+/* this is the text, when you hover on button */
+.hover-text {
     position: absolute;
-    background-color: #fff;
-    height: 3px;
-    width: 0;
-    left: 0; /* Start the line from the left */
-    bottom: -10px;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
     transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
 }
 
-header nav a:hover:after {
+/* hover */
+.button:hover .hover-text {
     width: 100%;
-    right: 0; /* Expand towards the right */
+    filer: drop-shadow(0 0 23px var(--animation-color))
 }
+
 .home {
     display: flex;
     height: 90vh;
@@ -68,61 +61,33 @@ header nav a:hover:after {
     position: relative;
     overflow: hidden;
 }
-.home .logo1{
+
+.home .video {
     height: auto;
     width: 100%;
-    position:absolute;
-    align-content:normal;
-    z-index: 0;  
-}
-
-
-.home .video{
-        height: auto;
-        width: 100%;
-        position:absolute;
-        align-content:normal;
-        z-index: 1;  
-}
-
-.home .title {
     position: absolute;
-    top: 10%;
-    left: 50%;
-    width: 100%; /* Adjust the width as needed */
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 120px;
-    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    z-index: 2;
-    margin-left: 80px;
-    visibility: hidden;
-}
-
-.home .title1 {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    color: rgba(31,107,238,255);
-    font-size: 40px;
-    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    align-content: normal;
+    z-index: 1;
 }
 
 .rules-regulations {
     padding: 30px;
-    padding-top: 10px; /* Increase padding top for more space */
-    background-color:#071223;
-    color: #fff; /* Use a slightly lighter color for better contrast */
+    padding-top: 10px;
+    /* Increase padding top for more space */
+    background-color: #071223;
+    color: #fff;
+    /* Use a slightly lighter color for better contrast */
     position: relative;
     overflow: hidden;
     line-height: 1.8;
     font-size: 18px;
     z-index: 100;
-    
+
 }
 
 .rules-regulations h2 {
-    margin-top: 30px; /* Add space above each heading */
+    margin-top: 30px;
+    /* Add space above each heading */
 }
 
 .rules-regulations ul {
@@ -131,9 +96,10 @@ header nav a:hover:after {
     letter-spacing: .8px;
 }
 
-.container section{
+.container section {
     margin-top: 40px;
 }
+
 .contact-info {
 
     display: flex;
@@ -142,31 +108,32 @@ header nav a:hover:after {
     margin: 30px;
 }
 
-footer{
+footer {
     background-color: #071223;
     color: white;
     padding: 20px 0;
 }
 
-.footer_content{
+.footer_content {
     width: 80%;
     margin: auto;
     text-align: center;
 }
 
-.footer_content a{
+.footer_content a {
     color: white;
 }
 
-.footer_content a:hover{
+.footer_content a:hover {
     color: aqua;
 }
 
-@media (max-width: 768px){
-    header nav ul{
+@media (max-width: 768px) {
+    header nav ul {
         display: none;
     }
-    header nav ul.active{
+
+    header nav ul.active {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -175,29 +142,35 @@ footer{
         width: 100%;
         background-color: #111;
     }
-    header nav ul.active li{
+
+    header nav ul.active li {
         padding: 10px 0;
     }
-    header nav ul.active li a{
+
+    header nav ul.active li a {
         padding: 10px 20px;
     }
-    .home{
-        height:25vh;
+
+    .home {
+        height: 25vh;
     }
-    .home img{
-        height:100vh;
+
+    .home img {
+        height: 100vh;
     }
-    .home .title{
+
+    .home .title {
         font-size: 60px;
     }
-    .home .title1{
+
+    .home .title1 {
         font-size: 10px;
     }
 
-    .contact-info{
+    .contact-info {
         flex-direction: column;
         align-items: center;
     }
-    
-    
+
+
 }
