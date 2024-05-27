@@ -22,32 +22,47 @@ document.addEventListener("DOMContentLoaded", () => {
     const tableBody = document.querySelector("#data-table tbody");
 
     async function filterParticipants(event) {
-        // Fetch participants data from Firebase based on the selected event
-        const querySnapshot = await getDocs(collection(db, event));
-        
-        // Clear existing table rows
-        tableBody.innerHTML = "";
+        try {
+            // Fetch participants data from Firebase based on the selected event
+            const querySnapshot = await getDocs(collection(db, event));
 
-        // Iterate through query results and populate the table
-        querySnapshot.forEach((doc) => {
-            const data = doc.data();
-            if (data && data.participantName && data.event && data.collegeName && data.mobileno) {
-                const row = `<tr>
-                                <td>${data.participantName}</td>
-                                <td>${data.event}</td>
-                                <td>${data.collegeName}</td>
-                                <td>${data.mobileno}</td>
-                            </tr>`;
-                tableBody.insertAdjacentHTML('beforeend', row);
+            // Clear existing table rows
+            tableBody.innerHTML = "";
+
+            if (querySnapshot.empty) {
+                // If no data is found, display a "No data found" message
+                const noDataRow = `<tr>
+                                    <td colspan="4" style="text-align:center;">No data found</td>
+                                </tr>`;
+                tableBody.insertAdjacentHTML('beforeend', noDataRow);
             } else {
-                console.error("Invalid data structure:", data);
+                // Iterate through query results and populate the table
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    if (data && data.participantName && data.event && data.collegeName && data.mobileno) {
+                        const row = `<tr>
+                                        <td>${data.participantName}</td>
+                                        <td>${data.event}</td>
+                                        <td>${data.collegeName}</td>
+                                        <td>${data.mobileno}</td>
+                                    </tr>`;
+                        tableBody.insertAdjacentHTML('beforeend', row);
+                    } else {
+                        console.error("Invalid data structure:", data);
+                    }
+                });
             }
-        });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            const errorRow = `<tr>
+                                <td colspan="4" style="text-align:center;">Error fetching data</td>
+                            </tr>`;
+            tableBody.insertAdjacentHTML('beforeend', errorRow);
+        }
     }
 
-    // Event listener for event dropdown change
-    eventDropdown.addEventListener("change", (event) => {
-        const selectedEvent = event.target.value;
-        filterParticipants(selectedEvent);
+    // Add an event listener to the dropdown to call filterParticipants when an event is selected
+    eventDropdown.addEventListener("change", (e) => {
+        filterParticipants(e.target.value);
     });
 });

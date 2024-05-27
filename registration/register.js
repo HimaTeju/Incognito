@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getFirestore, addDoc, collection} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -28,7 +28,7 @@ const eventLinks = {
     "TALENT SHOW-DANCING": "https://chat.whatsapp.com/JJTb88vnYsAF7NbIrvFQct",
     "TALENT SHOW-FASHION SHOW": "https://chat.whatsapp.com/JJTb88vnYsAF7NbIrvFQct",
     "TREASURE HUNT": "https://chat.whatsapp.com/FKVqfYiAVq11VcAsgUmRfn",
-    "VIDEOGRAPHY/PHOTOGRAPHY": "https://chat.whatsapp.com/CmmxnX1f2B45K7YOjVjIMg",
+    "VIDEOGRAPHY-PHOTOGRAPHY": "https://chat.whatsapp.com/CmmxnX1f2B45K7YOjVjIMg",
     "REELS": "https://chat.whatsapp.com/GdvBgr5EKP994BW6Z6Qftx",
 };
 
