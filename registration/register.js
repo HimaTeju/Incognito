@@ -18,16 +18,18 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const eventLinks = {
-    "IT QUIZ": "https://chat.whatsapp.com/B85g6RbPsWAHXxkrxOfHRR",
-    "CODING": "https://chat.whatsapp.com/Hz9Z6Z9Z6Zz1ZzZzZzZzZz",
-    "IT DUMB CHARADES": "N/A",
-    "LOGO DESIGN": "N/A",
-    "BGMI": "https://chat.whatsapp.com/Hz9Z6Z9Z6Zz1ZzZzZzZzZz",
-    "FIFA": "https://chat.whatsapp.com/EojjoGSReFh38FHExmQL40",
-    "TALENT SHOW": "https://chat.whatsapp.com/JJTb88vnYsAF7NbIrvFQct",
+    "IT QUIZ": "https://chat.whatsapp.com/JbopEWcJWmZH2l2TcED31l",
+    "CODING": "https://chat.whatsapp.com/CQRTGH8MoUbFUTYgPhp1mQ",
+    "IT DUMB CHARADES": "https://chat.whatsapp.com/IR0sPo7YRVUFLL5X3VpIbc",
+    "LOGO DESIGN": "https://chat.whatsapp.com/EVns0E89Isl5zo00yHP9kn",
+    "BGMI": "https://chat.whatsapp.com/DWI9Kyw9u0LF0vBX8BJNAU",
+    "FIFA": "https://chat.whatsapp.com/IVr5cNbDOlC2htkKVIcqa5",
+    "TALENT SHOW-SINGING": "https://chat.whatsapp.com/JJTb88vnYsAF7NbIrvFQct",
+    "TALENT SHOW-DANCING": "https://chat.whatsapp.com/JJTb88vnYsAF7NbIrvFQct",
+    "TALENT SHOW-FASHION SHOW": "https://chat.whatsapp.com/JJTb88vnYsAF7NbIrvFQct",
     "TREASURE HUNT": "https://chat.whatsapp.com/FKVqfYiAVq11VcAsgUmRfn",
-    "VIDEOGRAPHY/PHOTOGRAPHY": "https://chat.whatsapp.com/DFNPGOAOgpyC1rfm9Gn7Zw",
-    "REELS": "https://chat.whatsapp.com/IEW6fo32lKF9ZCKbGyZFI1",
+    "VIDEOGRAPHY/PHOTOGRAPHY": "https://chat.whatsapp.com/CmmxnX1f2B45K7YOjVjIMg",
+    "REELS": "https://chat.whatsapp.com/GdvBgr5EKP994BW6Z6Qftx",
 };
 
 // Get modal element

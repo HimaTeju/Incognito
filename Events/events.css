@@ -8,52 +8,6 @@
     font-family: 'Orbitron', sans-serif;
 }
 
-/* === removing default button style ===*/
-t.button {
-    margin: 0;
-    height: auto;
-    background: transparent;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-}
-
-/* button styling */
-.button {
-    --border-right: 6px;
-    --text-stroke-color: rgba(255, 255, 255, 0.6);
-    --animation-color: #37FF8B;
-    --fs-size: 2em;
-    letter-spacing: 3px;
-    text-decoration: none;
-    font-size: var(--fs-size);
-    font-family: "Arial";
-    position: relative;
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
-}
-
-/* this is the text, when you hover on button */
-.hover-text {
-    position: absolute;
-    box-sizing: border-box;
-    content: attr(data-text);
-    color: var(--animation-color);
-    width: 0%;
-    inset: 0;
-    border-right: var(--border-right) solid var(--animation-color);
-    overflow: hidden;
-    transition: 0.5s;
-    -webkit-text-stroke: 1px var(--animation-color);
-}
-
-/* hover */
-.button:hover .hover-text {
-    width: 100%;
-    filer: drop-shadow(0 0 23px var(--animation-color))
-}
-
 .home {
     display: flex;
     height: 90vh;
@@ -108,25 +62,94 @@ t.button {
     margin: 30px;
 }
 
-footer {
-    background-color: #071223;
-    color: white;
-    padding: 20px 0;
+.neumorphic-footer {
+    background: #071223;
+    padding: 40px 0;
 }
 
 .footer_content {
     width: 80%;
     margin: auto;
     text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.rounded-rectangle {
+    background: #071223;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 8px 8px 16px #000, -8px -8px 16px #1d2a3a;
+    position: relative;
+    z-index: 1;
+}
+
+.footer_content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer_content h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #b0c4de;
+}
+
+.footer_content p {
+    font-size: 18px;
+    margin-top: 20px;
+    color: white;
 }
 
 .footer_content a {
     color: white;
+    transition: color 0.3s ease;
 }
 
 .footer_content a:hover {
     color: aqua;
 }
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #071223;
+    background-color: #e0e8ef;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: rgba(255, 255, 255, 0.333);
+    border-radius: 40px 40px 40px 40px;
+    padding: 16px 24px 16px 28px;
+    transform: translate(0px, 0px) rotate(0deg);
+    transition: 0.2s;
+    box-shadow: -2px -1px 8px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
+    font-weight: bold;
+    margin-top: 2%;
+   }
+   
+   button:hover {
+    color: #516d91;
+    background-color: #E5EDF5;
+    box-shadow: -2px -1px 4px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+   }
+   
+   button:active {
+    box-shadow: none;
+   }
+
+   button a{
+    text-decoration: none;
+   }
 
 @media (max-width: 768px) {
     header nav ul {
