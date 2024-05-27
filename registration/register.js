@@ -45,11 +45,61 @@ document.getElementById("register").addEventListener("click", async function (ev
     console.log("Register button clicked");
     event.preventDefault(); // Prevent default form submission behavior
 
-    var participantName = document.getElementById("participantName").value;
-    var collegeName = document.getElementById("collegeName").value;
-    var email = document.getElementById("email").value;
-    var eventSelected = document.getElementById("event").value;
-    var mobileno = document.getElementById("mobileno").value;
+    var participantName = document.getElementById("participantName").value.trim();
+            var collegeName = document.getElementById("collegeName").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var eventSelected = document.getElementById("event").value;
+            var mobileno = document.getElementById("mobileno").value.trim();
+
+            // Clear previous error messages and styles
+            document.querySelectorAll(".error-message").forEach(element => {
+                element.textContent = "";
+            });
+
+            document.querySelectorAll(".input-error").forEach(element => {
+                element.classList.remove("input-error");
+            });
+
+            var isValid = true;
+
+            // Form validation
+            if (!participantName) {
+                document.getElementById("participantName").classList.add("input-error");
+                document.getElementById("participantNameError").textContent = "Participant name is required.";
+                isValid = false;
+            }
+
+            if (!collegeName) {
+                document.getElementById("collegeName").classList.add("input-error");
+                document.getElementById("collegeNameError").textContent = "College name is required.";
+                isValid = false;
+            }
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailPattern.test(email)) {
+                document.getElementById("email").classList.add("input-error");
+                document.getElementById("emailError").textContent = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+            if (!eventSelected) {
+                document.getElementById("event").classList.add("input-error");
+                document.getElementById("eventError").textContent = "Please select an event.";
+                isValid = false;
+            }
+
+            var mobilenoPattern = /^\d{10}$/; // Adjust pattern based on your requirements
+            if (!mobileno || !mobilenoPattern.test(mobileno)) {
+                document.getElementById("mobileno").classList.add("input-error");
+                document.getElementById("mobilenoError").textContent = "Please enter a valid 10-digit mobile number.";
+                isValid = false;
+            }
+
+
+    if (!isValid) {
+        return; // Stop form submission if there are validation errors
+    }
+
 
     try {
         await addDoc(collection(db, eventSelected), {
@@ -86,11 +136,3 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
-
-document.getElementById("show").addEventListener("click", async function (event) {
-    event.preventDefault();
-    const querySnapshot = await getDocs(collection(db, "CODING"));
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
-    });
-});

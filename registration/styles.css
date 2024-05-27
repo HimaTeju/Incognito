@@ -76,6 +76,14 @@ input[type="submit"]:hover {
 .login a:hover{
     text-decoration: underline;
 }
+.input-error {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
 
 .modal {
     display: none; 
@@ -131,4 +139,34 @@ input[type="submit"]:hover {
 
 .modal-content a:hover {
     text-decoration: underline;
+}
+
+/* General styles for the select element */
+select#event {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #1d2a3a;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #071223;
+    font-size: 16px;
+    color: #f9f9f9;
+}
+
+/* Adding custom arrow icon */
+
+/* Focus styles */
+select#event:focus {
+    border-color: #0d233f;
+    box-shadow: 0 0 5px rgba(13, 35, 63, 0.5);
+    outline: none;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    select#event {
+        font-size: 14px;
+    }
 }

@@ -13,16 +13,24 @@
     <h1>Incognito Event Registration</h1><br/>
     <form id="registrationForm">
         <label for="participantName">Participant Name:</label>
-        <input type="text" id="participantName" name="participantName" required><br><br>
+        <input type="text" id="participantName" name="participantName" required>
+        <span id="participantNameError" class="error-message"></span>
+        <br><br>
 
         <label for="collegeName">College Name:</label>
-        <input type="text" id="collegeName" name="collegeName" required><br><br>
+        <input type="text" id="collegeName" name="collegeName" required>
+        <span id="collegeNameError" class="error-message"></span>
+        <br><br>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="email" id="email" name="email" required>
+        <span id="emailError" class="error-message"></span>
+        <br><br>
 
         <label for="mobileno">Mobile Number:</label>
-        <input type="text" id="mobileno" name="mobileno" required><br><br>
+        <input type="text" id="mobileno" name="mobileno" required>
+        <span id="mobilenoError" class="error-message"></span>
+        <br><br>
 
         <label for="event">Event:</label>
         <select id="event" name="event" required>
@@ -40,7 +48,9 @@
             <option value="VIDEOGRAPHY/PHOTOGRAPHY">VIDEOGRAPHY/PHOTOGRAPHY</option>
             <option value="REELS">REELS</option>
             <!-- Add more options for other events -->
-        </select><br><br>
+        </select>
+        <span id="eventError" class="error-message"></span>
+        <br><br>
 
         <input type="submit" value="Register" id="register"><br />
     </form>
