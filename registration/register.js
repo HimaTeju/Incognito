@@ -50,6 +50,7 @@ document.getElementById("register").addEventListener("click", async function (ev
             var email = document.getElementById("email").value.trim();
             var eventSelected = document.getElementById("event").value;
             var mobileno = document.getElementById("mobileno").value.trim();
+            var termsCheckbox = document.getElementById("termsCheckbox").checked;
 
             // Clear previous error messages and styles
             document.querySelectorAll(".error-message").forEach(element => {
@@ -95,6 +96,12 @@ document.getElementById("register").addEventListener("click", async function (ev
                 isValid = false;
             }
 
+            if (!termsCheckbox) {
+                document.getElementById("termsCheckbox").classList.add("input-error");
+                document.getElementById("termsError").textContent = "Please agree to the Terms and Conditions.";
+                isValid = false;
+            }
+
 
     if (!isValid) {
         return; // Stop form submission if there are validation errors
@@ -134,5 +141,28 @@ span.onclick = function () {
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
+    }
+}
+
+var termsModal = document.getElementById("termsModal");
+
+// Get the link to open the terms modal
+var openTermsModal = document.getElementById("openTermsModal");
+
+// When the user clicks on the link, open the terms modal
+openTermsModal.onclick = function() {
+    termsModal.style.display = "block";
+}
+
+// Close the terms modal when the close button is clicked
+var termsClose = document.querySelectorAll("#termsModal .close")[0];
+termsClose.onclick = function () {
+    termsModal.style.display = "none";
+}
+
+// Close the terms modal when the user clicks outside of it
+window.onclick = function(event) {
+    if (event.target == termsModal) {
+        termsModal.style.display = "none";
     }
 }
