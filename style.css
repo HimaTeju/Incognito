@@ -237,6 +237,12 @@ nav li:first-child :hover {
     color: #071223;
 }
 
+@media screen and (max-width: 768px) {
+    .tab-button{
+        width: 100px;
+        font-size: 12px;
+    }
+}
 
 .eventsname h2 {
     text-align: center;
@@ -308,37 +314,11 @@ nav li:first-child :hover {
 
 }
 
-.button {
-    padding: 10px 20px;
-    border: 2px solid #f48bf4;
-    border-radius: 20px;
-    background-color: transparent;
-    color: aliceblue;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 0 10px;
-}
-
 .button:hover {
-    background-color: rgb(112, 38, 38);
+    background-color: #071223;
     color: white;
 }
 
-.landingbutton {
-    padding: 10px 20px;
-    border: 2px solid #f48bf4;
-    border-radius: 20px;
-    background-color: transparent;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 0 10px;
-}
-
-.landingbutton:hover {
-    background-color: purple;
-    color: white;
-}
 
 .text2 {
     flex: 1;
@@ -464,7 +444,18 @@ nav li:first-child :hover {
     .image2 {
         margin-top: 20px;
         width: 100%;
+        padding: 0;
     }
+    .image1 {
+        flex: 1;
+        /* Take remaining space */
+        padding: 0;
+        text-align: center;
+        margin-top: 0px;
+    
+    }
+    
+
 
 }
 
@@ -620,8 +611,6 @@ nav li:first-child :hover {
     position: relative;
     text-align: center;
     height: 100vh;
-    outline: 1px solid;
-    outline-color: #033784;
 }
 
 .organizer-container {
@@ -653,13 +642,13 @@ nav li:first-child :hover {
 }
 
 .org-content {
-    margin: 4%;
+    margin-top: 2%;
     position: relative;
     z-index: 2;
 }
 
 .org-content h1{
-    margin: 2%;
+    margin-top: 2%;
 }
 
 iframe {
@@ -806,7 +795,39 @@ iframe {
     }
 
     .organizer-container {
-        width: 100%;
+        width: 90%;
+    }
+
+    .org-content h1 {
+        font-size: 24px;
+    }
+
+    .org-content h2 {
+        font-size: 20px;
+    }
+
+    .org-content h3 {
+        font-size: 18px;
+    }
+
+    .footer_content h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: white;
+    }
+    
+    .footer_content h3 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #b0c4de;
+    }
+    
+    .footer_content p {
+        font-size: 14px;
+        margin-top: 20px;
+        color: white;
     }
 
 }
@@ -836,8 +857,10 @@ iframe {
     justify-content: center;
     flex-direction: column;
     color: white;
-    outline: 1px solid;
-    outline-color: #033784;
+}
+
+.countdown h2{
+    text-align: center;
 }
 
 .clock-container {
@@ -892,6 +915,12 @@ iframe {
 }
 
 @media (max-width: 825px) {
+    .countdown h2 {
+        font-size: .9rem;
+        text-align: center;
+        margin-top: 5px;
+    }
+
     .clock-container {
         flex-direction: column;
         padding-top: 40px;
@@ -905,5 +934,49 @@ iframe {
     .clock-col:before,
     .clock-col:after {
         display: none !important;
+    }
+}
+
+@media (max-width: 400px){
+    .card {
+        margin-left: 0px;
+        margin-bottom: 20px;
+        height: 500px;
+    }
+
+    .card .circle::before {
+        height: 325px;
+        width: 325px;
+    }
+
+    .card:hover {
+        width: 90%;
+    }
+
+    .card:hover .image {
+        transition-delay: .75s;
+        top: 15%;
+        left: 50%;
+        height: 120px;
+        transform: translate(-50%, -50%);
+        scale: (1) rotate(15deg);
+    }
+
+    .card .content {
+        width: 100%;
+        left: 0%;
+        top: 30%;
+        padding: 10px 10px 10px 10px;
+        opacity: 0;
+        transition: .5s;
+        visibility: hidden;
+        letter-spacing: .7px;
+    }
+
+    .circle .name {
+        text-align: center;
+        bottom: 17%;
+        font-size: 20px;
+        right: 3%;
     }
 }
