@@ -629,7 +629,6 @@ nav li:first-child :hover {
     color: #fff;
     text-align: center;
     height: 500px;
-
     width: 800px;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -650,13 +649,18 @@ nav li:first-child :hover {
     position: relative;
     z-index: 2;
     margin: 0 auto;
+    background-color: transparent;
 }
 
 .content {
+    margin: 4%;
     position: relative;
     z-index: 2;
 }
 
+.content h1{
+    margin: 2%;
+}
 
 iframe {
     overflow-clip-margin: content-box !important;

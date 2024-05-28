@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -63,42 +64,56 @@ input[type="submit"]:hover {
     background-color: #0d233f;
 }
 
-.login{
+.login {
     margin: 20px 0;
     text-align: center;
 }
 
-.login a{
+.login a {
     color: #fff;
     text-decoration: none;
 }
 
-.login a:hover{
+.login a:hover {
     text-decoration: underline;
 }
 
+.input-error {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.4); 
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Modal content */
 .modal-content {
-    background-color: #0d233f; /* Main background color */
-    margin: 10% auto; 
+    background-color: #0d233f;
+    /* Main background color */
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    border-radius: 8px; /* Rounded corners */
-    width: 60%; /* Adjusted width */
-    color: #ffffff; /* Text color */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    border-radius: 8px;
+    /* Rounded corners */
+    width: 60%;
+    /* Adjusted width */
+    color: #ffffff;
+    /* Text color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Shadow effect */
 }
 
 /* Close button */
@@ -118,17 +133,69 @@ input[type="submit"]:hover {
 
 /* Style for the thank you message */
 #thankYouMessage {
-    font-size: 18px; /* Increased font size */
-    line-height: 1.5; /* Improved line height */
+    font-size: 18px;
+    /* Increased font size */
+    line-height: 1.5;
+    /* Improved line height */
 }
 
 /* Style for the link */
 .modal-content a {
-    color: #ffcc00; /* Link color */
+    color: #ffcc00;
+    /* Link color */
     text-decoration: none;
     font-weight: bold;
 }
 
 .modal-content a:hover {
     text-decoration: underline;
+}
+
+/* General styles for the select element */
+select#event {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #1d2a3a;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #071223;
+    font-size: 16px;
+    color: #f9f9f9;
+}
+
+/* Adding custom arrow icon */
+
+/* Focus styles */
+select#event:focus {
+    border-color: #0d233f;
+    box-shadow: 0 0 5px rgba(13, 35, 63, 0.5);
+    outline: none;
+}
+
+#termsModal {
+    display: none;
+}
+
+/* Additional styles for the terms modal content */
+#termsModal .modal-content {
+    width: 60%;
+    letter-spacing: 1px;
+}
+
+#termsModal h3 {
+    color: #ffffff;
+}
+
+#termsModal ol {
+    color: #ffffff;
+    padding-left: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    select#event {
+        font-size: 14px;
+    }
 }
