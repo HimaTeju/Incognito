@@ -652,13 +652,13 @@ nav li:first-child :hover {
     background-color: transparent;
 }
 
-.content {
+.org-content {
     margin: 4%;
     position: relative;
     z-index: 2;
 }
 
-.content h1{
+.org-content h1{
     margin: 2%;
 }
 
