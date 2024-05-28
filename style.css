@@ -375,32 +375,46 @@ nav li:first-child :hover {
 }
 
 .button {
-    padding: 10px 20px;
-    border: 2px solid #f48bf4;
+    display: inline-block;
     border-radius: 20px;
-    background-color: transparent;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 0 10px;
-}
-
-.button:hover {
-    background-color: rgb(177, 34, 177);
-    color: white;
-}
-
-.download-button {
-    background-color: #59137f;
-    color: white;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    background: transparent;
+    color: white;
+    font-family: inherit;
+    text-align: center;
+    font-size: 13px;
+    box-shadow: 0px 14px 56px -11px #1875FF;
+    width: 12em;
+    padding: 1em;
+    transition: all 0.4s;
     cursor: pointer;
-}
-
-
+    outline: 2.25px solid #fff;
+   }
+   
+   .button span {
+    cursor: pointer;
+    display:inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   .button span:after {
+    content: 'Now';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+   }
+   
+   .button:hover span {
+    padding-right: 2.85em;
+   }
+   
+   .button:hover span:after {
+    opacity: 4;
+    right: 0;
+   }
 .event-coordinator h2 {
     text-align: center;
     margin-bottom: 50px;
