@@ -196,3 +196,22 @@ button {
         border-top: 6px solid #071223;
     }
 }
+
+.navigation-arrows {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+}
