@@ -10,7 +10,6 @@
 
 .home {
     display: flex;
-    height: 90vh;
     background: #071223;
     position: relative;
     overflow: hidden;
@@ -152,48 +151,67 @@ button {
    }
 
 @media (max-width: 768px) {
-    header nav ul {
-        display: none;
-    }
-
-    header nav ul.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        width: 100%;
-        background-color: #111;
-    }
-
-    header nav ul.active li {
-        padding: 10px 0;
-    }
-
-    header nav ul.active li a {
-        padding: 10px 20px;
-    }
-
-    .home {
-        height: 25vh;
-    }
-
-    .home img {
-        height: 100vh;
-    }
-
-    .home .title {
-        font-size: 60px;
-    }
-
-    .home .title1 {
-        font-size: 10px;
-    }
-
     .contact-info {
         flex-direction: column;
         align-items: center;
     }
+}
 
+#loader {
+    position: fixed;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    border: 14px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 14px solid #071223;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+    display: none; /* Initially hidden */
+}
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* CSS to position the video */
+.home {
+    position: relative;
+}
+
+.video {
+    position: absolute;
+}
+
+@media (max-width: 768px){
+    #loader{
+        top: 10%;
+        left: 42%;
+        width: 50px;
+        height: 50px;
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid #071223;
+    }
+}
+
+.navigation-arrows {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
 }
