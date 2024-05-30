@@ -87,3 +87,22 @@ select option {
     background-color: #071223;
     color: #fff;
 }
+
+/* Neumorphic-style download button */
+#download-pdf {
+    background-color: #071223;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px #000000, 
+                -4px -4px 8px #1d2f3f;
+   margin: 5%;
+}
+
+#download-pdf:hover {
+    box-shadow: 2px 2px 4px #000000, 
+                -2px -2px 4px #1d2f3f;
+}

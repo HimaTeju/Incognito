@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyADE_pHLRGB3BHDSXkQli7SRnaOvhHOOjM",
@@ -12,31 +12,23 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
-// Get a reference to the Firestore database service
 const db = getFirestore(app);
 
-// Reference to the collection
 document.addEventListener("DOMContentLoaded", () => {
     const eventDropdown = document.getElementById("Event-dropdown");
     const tableBody = document.querySelector("#data-table tbody");
 
     async function filterParticipants(event) {
         try {
-            // Fetch participants data from Firebase based on the selected event
             const querySnapshot = await getDocs(collection(db, event));
-
-            // Clear existing table rows
             tableBody.innerHTML = "";
 
             if (querySnapshot.empty) {
-                // If no data is found, display a "No data found" message
                 const noDataRow = `<tr>
                                     <td colspan="4" style="text-align:center;">No data found</td>
                                 </tr>`;
                 tableBody.insertAdjacentHTML('beforeend', noDataRow);
             } else {
-                // Iterate through query results and populate the table
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
                     if (data && data.participantName && data.event && data.collegeName && data.mobileno) {
@@ -61,8 +53,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Add an event listener to the dropdown to call filterParticipants when an event is selected
     eventDropdown.addEventListener("change", (e) => {
         filterParticipants(e.target.value);
+    });
+
+    document.getElementById('download-pdf').addEventListener('click', function () {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        // Get the current date and time
+        const currentDateTime = new Date().toLocaleString();
+        
+        doc.autoTable({
+            html: '#data-table',
+            headStyles: { fillColor: [255, 0, 0] },
+            margin: { top: 30 },
+            didDrawPage: function (data) {
+                doc.setFontSize(16); // Set font size for the title
+                doc.text("Registered Participants", 14, 22);
+                
+                doc.setFontSize(10); // Set smaller font size for the date and time
+                doc.text(currentDateTime, doc.internal.pageSize.getWidth() - 14, 22, { align: 'right' });
+            }
+        });
+
+        doc.save('participants.pdf');
     });
 });
