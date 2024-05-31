@@ -196,6 +196,10 @@ button {
         border: 6px solid #f3f3f3;
         border-top: 6px solid #071223;
     }
+    
+    .home{
+        height: 25vh;
+    }
 }
 
 .navigation-arrows {
