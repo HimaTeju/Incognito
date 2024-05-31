@@ -13,6 +13,7 @@
     background: #071223;
     position: relative;
     overflow: hidden;
+    height: 90vh;
 }
 
 .home .video {
@@ -169,7 +170,7 @@ button {
     width: 100px;
     height: 100px;
     animation: spin 2s linear infinite;
-    display: none; /* Initially hidden */
+    display: inline; 
 }
 
 @keyframes spin {
