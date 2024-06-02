@@ -618,7 +618,7 @@ nav li:first-child :hover {
     position: absolute;
     color: #fff;
     text-align: center;
-    height: 500px;
+    height: 400px;
     width: 800px;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -633,6 +633,38 @@ nav li:first-child :hover {
     transform: translate(-50%, -50%);
 }
 
+.event-coordinator{
+    background-color: #071223;
+    position: relative;
+    text-align: center;
+    height: 100vh;
+}
+
+.container-section{
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    height: 55%;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 20px;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    line-height: 150%;
+}
 
 .logo {
     width: 100px;
@@ -829,6 +861,16 @@ iframe {
         font-size: 14px;
         margin-top: 20px;
         color: white;
+    }
+    .contact-info{
+        flex-direction: column;
+        justify-content: space-between;
+        line-height: 150%;
+    }
+
+    .container-section{
+        height: 70%;
+    
     }
 
 }
