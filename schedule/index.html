@@ -1,113 +1,81 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Schedule</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Define your styles here */
-    .solid {
-      background-color: #000;
-      /* Define other styles for the solid navigation bar */
-    }
-    
-    .transparent {
-      background-color:blueviolet;
-      /* Define other styles for the transparent navigation bar */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Schedule</title>
+    <link rel="icon" href="../assets/favv.png" type="image/icon type">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
-  <nav id="nav" class="transparent">
-    <!-- Navigation bar content -->
     <div class="container">
-      <!-- Navigation bar content -->
+        <h1>INCOGNITO - 24</h1>
+        <h2>Schedule</h2>
+        <div class="header">
+            <div class="header-content">
+                <span class="header-time">Time</span>
+                <span class="header-events">Events</span>
+            </div>
+        </div>    
+        <div class="schedule" data-aos="fade-up">
+            <div class="time">9:30 AM</div>
+            <div class="event-group">
+            <div class="event" data-room="Room no N102">Videography/Photography</div>
+        </div>
+        </div>
+        <div class="schedule" data-aos="fade-up">
+            <div class="time">10:00 AM</div>
+            <div class="event-group">
+                <div class="event" data-room="AV Hall">IT Quiz</div>
+            </div>
+        </div>
+        <div class="schedule" data-aos="fade-up">
+            <div class="time">10:30 AM</div>
+            <div class="event-group">
+                <div class="event" data-room="MCA Lab">Coding & Debugging</div>
+            </div>
+        </div>
+        <div class="schedule" data-aos="fade-up">
+            <div class="time">11:00 AM</div>
+            <div class="event-group">
+                <div class="event" data-room="Room No 325">IT Dumb Charades</div>
+                <div class="event" data-room="BCA Lab 2">Logo design</div>
+            </div>
+        </div>
+        <div class="schedule" data-aos="fade-up">
+            <div class="time">1:00 PM</div>
+            <div class="event-group">
+                <div class="event" data-room="Room no 324">Lunch</div>
+            </div>
+        </div>
+        <div class="schedule" data-aos="fade-up">
+            <div class="time">1:30 PM</div>
+            <div class="event-group">
+                <div class="event" data-room="Room no 325">BGMI</div>
+            </div>
+        </div>
+        <div class="schedule" data-aos="fade-up">
+            <div class="time">2:00 PM</div>
+            <div class="event-group">
+                <div class="event" data-room="AV Hall">FIFA</div>
+            </div>
+        </div>
+        <div class="schedule" data-aos="fade-up">
+            <div class="time">3:00 PM</div>
+            <div class="event-group">
+                <div class="event" data-room="Conference Hall">Treasure Hunt</div>
+                <div class="event" data-room="Room no 325">Reels</div>
+            </div>
+        </div>
+        <div class="schedule" data-aos="fade-up">
+            <div class="time">3:30 PM</div>
+            <div class="event-group">
+                <div class="event" data-room="Auditorium">Talent Show</div>
+            </div>
+        </div>
     </div>
-  </nav>
-
-  <div class="schedule" id="schedule">
-    <!-- Schedule content extracted from the original HTML -->
-    <h1 class="section-heading">Schedule</h1>
-    <div class="schedule-div">
-      <h3>Day - 1</h3>
-      <table>
-        <tbody>
-          <tr style="background-color: rgb(23, 23, 22);">
-            <th style="width: 15%;">Time</th>
-            <th style="width: 85%;">Events</th>
-          </tr>
-          <tr>
-            <th>9:00 am</th>
-            <td>
-              <p class="schedule-event">Opening Ceremony</p>
-            </td>
-          </tr>
-          <tr>
-            <th>11:00 am</th>
-            <td>
-              <p class="schedule-event">Workshop on Photography</p>
-              <p class="schedule-event">Coding Competition</p>
-            </td>
-          </tr>
-          <tr>
-            <th>1:00 pm</th>
-            <td>
-              <p class="schedule-event">Lunch Break</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    
-    <div class="schedule-div">
-      <h3>Day - 2</h3>
-      <table>
-        <tbody>
-          <tr style="background-color: rgb(23, 23, 22);">
-            <th style="width: 15%;">Time</th>
-            <th style="width: 85%;">Events</th>
-          </tr>
-          <tr>
-            <th>9:00 am</th>
-            <td>
-              <p class="schedule-event">Registration</p>
-            </td>
-          </tr>
-          <tr>
-            <th>10:00 am</th>
-            <td>
-              <p class="schedule-event">Panel Discussion</p>
-            </td>
-          </tr>
-          <tr>
-            <th>12:00 pm</th>
-            <td>
-              <p class="schedule-event">Networking Lunch</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <script>
-    function applyScrollEffect() {
-      var header = document.getElementById('nav');
-      var scrollPosition = window.scrollY;
-      var viewportHeight = window.innerHeight;
-      var scrollThreshold = viewportHeight * 0.1; // 10% of viewport height
-      
-      if (scrollPosition > scrollThreshold) {
-        header.classList.add('solid');
-        header.classList.remove('transparent');
-      } else {
-        header.classList.remove('solid');
-        header.classList.add('transparent');
-      }
-    }
-    
-    window.addEventListener('scroll', applyScrollEffect);
-  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
