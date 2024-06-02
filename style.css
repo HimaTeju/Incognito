@@ -870,9 +870,14 @@ iframe {
 
     .container-section{
         height: 70%;
-    
     }
 
+}
+
+@media screen and (max-width: 400px){
+    .container-section{
+        height: 95%;
+    }
 }
 
 .clock-day:before {
