@@ -84,11 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = moment();
         const remaining = moment.duration(countdownDate.diff(now));
 
-        const days = remaining.days();
-        console.log('Days:', days);
-        const hours = remaining.hours();
-        const minutes = remaining.minutes();
-        const seconds = remaining.seconds();
+        const days = 0;
+        const hours = 0;
+        const minutes = 0;
+        const seconds = 0;
 
         document.documentElement.style.setProperty('--timer-day', "'" + days + "'");
         document.documentElement.style.setProperty('--timer-hours', "'" + hours + "'");
