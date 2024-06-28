@@ -17,7 +17,7 @@ This repository contains the codebase for **INCOGNITO**, an annual technical fes
 - Neumorphism
 - Glassmorphism
 
-## :settings: Technologies Used
+## :gear: Technologies Used
 
 - HTML5
 - CSS3
