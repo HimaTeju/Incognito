@@ -1,6 +1,6 @@
 # INCOGNITO Technical Fest Website
 
-![INCOGNITO Logo](screenshots/home_page.png.png)
+![INCOGNITO Logo](screenshots/home_page.png)
 
 This repository contains the codebase for **INCOGNITO**, an annual technical fest organized by the Department of Computer Science at Seshadripuram College. The website is designed to facilitate event registration and provide information about various events happening during the fest.
 
@@ -30,11 +30,12 @@ This repository contains the codebase for **INCOGNITO**, an annual technical fes
  
 | Home Page | Events | Footer |
 | :---         |     :---      |          :--- |
-| <img src="screenshots/home_page.png.png" width="auto" height="auto" />  | <img src="screenshots/events.png" width="auto" height="auto" />    | <img src="footer.png" width="auto" height="auto" />    |
+| <img src="screenshots/home_page.png" width="auto" height="auto" />  | <img src="screenshots/events.png" width="auto" height="auto" />    | <img src="screenshots/footer.png" width="auto" height="auto" />    |
 
 | Registration Page | 
 | :---         | 
 |  <img src="screenshots/registration.png" width="auto" height="auto" /> |
+</div>
 
 ## Contact
 
