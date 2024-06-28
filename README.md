@@ -28,16 +28,25 @@ This repository contains the codebase for **INCOGNITO**, an annual technical fes
 ## :movie_camera: App Screenshots
 <div align="center">
  
-| Home Page | Events | Footer |
-| :---         |     :---      |          :--- |
-| <img src="screenshots/home_page.png" width="auto" height="auto" />  | <img src="screenshots/events.png" width="auto" height="auto" />    | <img src="screenshots/footer.png" width="auto" height="auto" />    |
+| Home Page | 
+| :---         |
+| <img src="screenshots/home_page.png" width="auto" height="auto" />  | 
+
+| Events |
+|     :---      |
+| <img src="screenshots/events.png" width="auto" height="auto" />    | 
+
+| Footer |
+|          :--- |
+| <img src="screenshots/footer.png" width="auto" height="auto" />    |
+
 
 | Registration Page | 
 | :---         | 
 |  <img src="screenshots/registration.png" width="auto" height="auto" /> |
 </div>
 
-## Contact
+## 
 
 Special thanks to [Harshith S](https://github.com/https://github.com/harshith8899) for contributions to the project!
 
