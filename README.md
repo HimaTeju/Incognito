@@ -48,6 +48,6 @@ This repository contains the codebase for **INCOGNITO**, an annual technical fes
 
 ## 
 
-Special thanks to [Harshith S](https://github.com/https://github.com/harshith8899) for contributions to the project!
+
 
 Website Link: [https://incognito-2024.pages.dev/](https://incognito-2024.pages.dev/)
